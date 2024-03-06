@@ -4,16 +4,14 @@ import type { FooterItem, MainNavItem } from '@/types';
 export type SiteConfig = typeof siteConfig;
 
 const links = {
-    facebook:
-        'https://www.linkedin.com/company/more-clean-house-cleaning-sydney',
-    instagram: 'https://instagram.com/moreclean_au',
-    twitter: 'https://twitter.com/moreclean_au',
-    pinterest: 'https://www.pinterest.com.au/magicclean_au',
+    facebook: 'https://www.linkedin.com/company/',
+    instagram: 'https://instagram.com/',
+    twitter: 'https://twitter.com/',
+    pinterest: 'https://www.pinterest.com.au/',
     linkin: 'https://www.linkedin.com/company/',
     youtube: 'https://www.youtube.com/channel/',
     googlemap: '',
 
-    buynsw: 'https://buy.nsw.gov.au/supplier/profile',
     yelp: 'https://www.yelp.com/biz/',
 };
 

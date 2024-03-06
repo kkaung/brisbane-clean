@@ -13,9 +13,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { headingVariants } from '@/components/page-header';
 import { Breadcrumbs } from '@/components/pagers/breadcrumbs';
 import { getPathname } from '@/lib/next';
-import { cities } from '@/configs/location';
-import Dot from '@/components/dot';
 import { siteConfig } from '@/configs/site';
+import Dot from '@/components/dot';
 
 interface PostPageProps {
     params: {
@@ -105,7 +104,7 @@ export default async function PostPage({ params }: PostPageProps) {
     ) as Author;
 
     return (
-        <section className="container relative max-w-3xl py-6 lg:py-10">
+        <article className="container relative max-w-3xl py-6 lg:py-10">
             <Link
                 href="/blog"
                 className={cn(
@@ -219,16 +218,17 @@ export default async function PostPage({ params }: PostPageProps) {
                 <div className="space-y-2">
                     <h3 className="font-semibold text-lg">{siteConfig.name}</h3>
                     <p className="text-sm">
-                        {siteConfig.name} is a top-rated house cleaning company
-                        in brisbane. We offer tailored cleaning services for your
-                        homes, apartments and offices.
+                        {siteConfig.name} is a top-rated{' '}
+                        <Link href="/">house cleaning company in Brisbane</Link>
+                        . We offer tailored cleaning services for your homes,
+                        apartments and offices.
                     </p>
                 </div>
                 <ul className="grid grid-cols-1 gap-x-4 gap-y-2 text-sm">
                     <li>
                         <Link
                             href="/deep-cleaning-brisbane"
-                            title="Deep Cleaning Service In brisbane"
+                            title="Deep Cleaning Service Brisbane"
                         >
                             Deep Cleaning
                         </Link>
@@ -236,7 +236,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li>
                         <Link
                             href="/regular-cleaning-brisbane"
-                            title="Regular Cleaning Service In Brisbane"
+                            title="Regular Cleaning Service Brisbane"
                         >
                             Regular Cleaning
                         </Link>
@@ -244,7 +244,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li>
                         <Link
                             href="/bond-cleaning-brisbane"
-                            title="Bond Cleaning Service In Brisbane"
+                            title="Bond Cleaning Service Brisbane"
                         >
                             End Of Lease Cleaning
                         </Link>
@@ -252,7 +252,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li>
                         <Link
                             href="/office-cleaning-brisbane"
-                            title="Office Cleaning Service In Brisbane"
+                            title="Office Cleaning Service Brisbane"
                         >
                             Office Cleaning
                         </Link>
@@ -260,7 +260,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li>
                         <Link
                             href="/oven-cleaning-brisbane"
-                            title="Oven Cleaning Service In Brisbane"
+                            title="Oven Cleaning Service Brisbane"
                         >
                             Oven Cleaning
                         </Link>
@@ -268,7 +268,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li>
                         <Link
                             href="/carpet-cleaning-brisbane"
-                            title="Carpet Cleaning Service In brisbane"
+                            title="Carpet Cleaning Service Brisbane"
                         >
                             Carpet Cleaning
                         </Link>
@@ -276,7 +276,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li>
                         <Link
                             href="/window-cleaning-brisbane"
-                            title="Window Cleaning Service In Brisbane"
+                            title="Window Cleaning Service Brisbane"
                         >
                             Window Cleaning
                         </Link>
@@ -284,7 +284,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li>
                         <Link
                             href="/after-builder-cleaning-brisbane"
-                            title="After Builder Cleaning Service In Brisbane"
+                            title="After Builder Cleaning Service Brisbane"
                         >
                             After Builder Cleaning
                         </Link>
@@ -292,7 +292,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     <li>
                         <Link
                             href="/airbnb-cleaning-brisbane"
-                            title="Airbnb Cleaning Service In Brisbane"
+                            title="Airbnb Cleaning Service Brisbane"
                         >
                             Airbnb Cleaning
                         </Link>
@@ -316,6 +316,6 @@ export default async function PostPage({ params }: PostPageProps) {
                     See all posts
                 </Link>
             </div>
-        </section>
+        </article>
     );
 }

@@ -74,7 +74,7 @@ export const siteConfig = {
     links,
     footerNav: [
         {
-            title: 'Cleaning Services',
+            title: 'Services',
             items: [
                 {
                     title: 'Deep Cleaning',
@@ -132,6 +132,7 @@ export const siteConfig = {
             items: [
                 { title: 'About Us', href: '/about' },
                 { title: 'Careers', href: '/careers' },
+                { title: 'Sitemap', href: '/sitemap' },
             ],
         },
     ] satisfies FooterItem[],

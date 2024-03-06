@@ -4,7 +4,6 @@ import { Shell } from '@/components/shell';
 import { Icons } from '@/components/icons';
 import { cn, toTitleCase, unslugify } from '@/lib/utils';
 import { type HTMLAttributes } from 'react';
-import { Separator } from '@/components/ui/separator';
 
 import FooterTabs from '../footer-tabs';
 
@@ -32,7 +31,7 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                             <span className="font-bold">{siteConfig.logo}</span>
                         </Link>
                         <p className="my-4 max-w-xs text-xs md:text-sm">
-                            We transform Perth homes from chaotic havens into
+                            We transform Brisbane homes from chaotic havens into
                             sparkling sanctuaries, all while respecting the
                             environment and your peace of mind.
                         </p>

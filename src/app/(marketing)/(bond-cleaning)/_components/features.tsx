@@ -10,7 +10,7 @@ interface FeaturesProps extends HTMLAttributes<HTMLElement> {
 const items = [
     {
         title: '100% Bond Back Guarantee',
-        content: `If your real estate agent spots any issues within 72 hours after our clean, we'll come back to fix them—completely free of charge.`,
+        content: `If your real estate agent spots any issues within 72 hours after our clean, we'll come back to fix them completely free of charge.`,
     },
     {
         title: 'Simple & Easy Booking',
@@ -33,8 +33,8 @@ const items = [
         content: `Trust our expert customer service team for comprehensive support from inquiry to post-service, ensuring your satisfaction at every stage.`,
     },
     {
-        title: 'Across Sydney',
-        content: `We’ve got vetted end lease cleaners across Sydney, ready to help get you on the move.`,
+        title: 'Across Brisbane',
+        content: `We’ve got vetted end lease cleaners across Brisbane, ready to help get you on the move.`,
     },
     {
         title: 'No Hidden Fees',

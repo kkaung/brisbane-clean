@@ -1,4 +1,8 @@
-import { PageHeader, PageHeaderHeading } from '@/components/page-header';
+import {
+    PageHeader,
+    PageHeaderDescription,
+    PageHeaderHeading,
+} from '@/components/page-header';
 import { Breadcrumbs } from '@/components/pagers/breadcrumbs';
 import { Shell } from '@/components/shell';
 import React from 'react';
@@ -14,12 +18,18 @@ import {
 import { Metadata } from 'next';
 
 import FAQs from '../_components/faqs';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Author, allAuthors } from 'contentlayer/generated';
+import Link from 'next/link';
+import { Icons } from '@/components/icons';
+import { formatDate } from '@/lib/utils';
 
 export const runtime = 'edge';
 
 export const metadata: Metadata = {
-    title: 'House Cleaning Prices In Sydney',
-    description: `Get crystal clear pricing on Sydney's top-rated house cleaning services. Find the perfect fit for your budget and needs, with options from weekly refreshes to deep dives.`,
+    title: 'House Cleaning Prices In Brisbane',
+    description: `Get crystal clear pricing on Brisbane's top-rated house cleaning services. Find the perfect fit for your budget and needs, with options from weekly refreshes to deep dives.`,
 };
 
 const pricingList = [
@@ -54,8 +64,12 @@ const pricingList = [
 ];
 
 export default function Page() {
+    const author = allAuthors.find(
+        author => author.slugAsParams === 'kaung'
+    ) as Author;
+
     return (
-        <Shell>
+        <Shell as="article">
             <Breadcrumbs
                 segments={[
                     { title: 'Home', href: '/' },
@@ -65,8 +79,16 @@ export default function Page() {
             />
             <PageHeader className="text-center">
                 <PageHeaderHeading>
-                    House Cleaning Pricing In Sydney
+                    House Cleaning Pricing In Brisbane
                 </PageHeaderHeading>
+                <PageHeaderDescription className="mx-auto">
+                    <time
+                        dateTime={'2024-01-04T00:00:00.000Z'}
+                        className="block text-sm text-muted-foreground mb-2"
+                    >
+                        Updated on {formatDate('2024-01-04T00:00:00.000Z')}
+                    </time>
+                </PageHeaderDescription>
             </PageHeader>
             <section className="broder max-w-xl mx-auto w-full">
                 <Table>
@@ -92,6 +114,47 @@ export default function Page() {
                 </Table>
             </section>
             <FAQs />
+            <section className="my-8 max-w-xl mx-auto">
+                <Card className="border-0 bg-secondary/50 rounded-xl">
+                    <CardHeader>
+                        <div className="flex gap-4">
+                            <CardTitle>
+                                <Avatar>
+                                    <AvatarImage
+                                        src={author.avatar}
+                                        alt="Author Avatar"
+                                    />
+                                    <AvatarFallback>
+                                        {author.title.charAt(0).toUpperCase()}
+                                    </AvatarFallback>
+                                </Avatar>
+                            </CardTitle>
+                            <div className="font-semibold">
+                                <p className="text-xs text-muted-foreground">
+                                    Article by
+                                </p>
+                                <Link href={`/authors/${author.slugAsParams}`}>
+                                    <p className="relative text-primary hover:underline">
+                                        {author.title}
+                                    </p>
+                                </Link>
+                            </div>
+                        </div>
+                    </CardHeader>
+                    <CardContent className="space-y-4 text-foreground">
+                        <p className="text-foreground">{author.description}</p>
+                        <div className="flex gap-4">
+                            <Link
+                                aria-label="Linkin"
+                                target="_blank"
+                                href={`https://www.linkedin.com/in/${author.linkin}`}
+                            >
+                                <Icons.linkin aria-hidden className="h-4 w-4" />
+                            </Link>
+                        </div>
+                    </CardContent>
+                </Card>
+            </section>
         </Shell>
     );
 }

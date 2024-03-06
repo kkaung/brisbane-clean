@@ -22,7 +22,7 @@ export default function Page() {
                 { title: 'Home', href: '/' },
                 {
                     title: 'Window Cleaning',
-                    href: '/window-cleaning-perth',
+                    href: '/window-cleaning-brisbane',
                 },
             ]}
         />

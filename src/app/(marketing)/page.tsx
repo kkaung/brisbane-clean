@@ -2,6 +2,11 @@ import React from 'react';
 import { BreadcrumbJsonLd, OrganizationJsonLd } from 'next-seo';
 import { Shell } from '@/components/shell';
 import { type Metadata } from 'next';
+import Commitment from '@/components/commitment';
+import { absoluteUrl } from '@/lib/utils';
+import { siteConfig } from '@/configs/site';
+import Services from './_components/services';
+import About from '@/components/about';
 
 import Hero from './_components/hero';
 import HowWork from './_components/how-work';
@@ -11,15 +16,10 @@ import Checklist from './_components/checklist';
 import Features from './_components/features';
 import Gurantee from './_components/gurantee';
 import LatestBlog from './_components/latest-blog';
-import About from './_components/about';
-import { absoluteUrl } from '@/lib/utils';
-import { siteConfig } from '@/configs/site';
-import Commitment from '@/components/commitment';
 
 import Featuring from './_components/featuring';
 import SocialVideos from '@/components/social-videos';
 import { ServicesDialog } from '@/components/services-dialog';
-import Services from './_components/services';
 
 export const runtime = 'edge';
 

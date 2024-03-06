@@ -71,7 +71,9 @@ export default function Hero({ ...props }: HeroProps) {
                                     aria-hidden
                                     strokeWidth={3}
                                 />
-                                <p>Trusted by 1000+ monthly movers in Sydney</p>
+                                <p>
+                                    Trusted by 1000+ monthly movers in Brisbane
+                                </p>
                             </div>
                         </div>
                         <div className="flex gap-1 items-center text-sm">

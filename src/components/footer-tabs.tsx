@@ -15,8 +15,8 @@ export default function FooterTabs() {
 
     const tabs = [
         {
-            title: 'Perth',
-            value: 'perth',
+            title: 'Brisbane',
+            value: 'brisbane',
         },
     ];
 

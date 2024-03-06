@@ -18,12 +18,12 @@ const links = {
 };
 
 export const siteConfig = {
-    logo: 'MagicClean',
-    name: 'Magic Clean',
-    title: `Brisbane's Premium House Cleaning Serivce | Magic Clean`,
+    logo: 'MasterMaid',
+    name: 'Master Maid',
+    title: `Brisbane's Premium House Cleaning Serivce | Master Maid`,
     description: `Our top-rated cleaning services come with a 200% satisfaction guarantee. We deliver sparkling results you'll love with our professional cleaners. Book online in 60 seconds!`,
-    url: 'https://moreclean.com.au',
-    ogImage: 'https://moreclean.com.au/opengraph-image.png',
+    url: 'https://mastermaid.com.au',
+    ogImage: 'https://mastermaid.com.au/opengraph-image.png',
     mainNav: [
         {
             title: 'Services',

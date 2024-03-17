@@ -27,6 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/booking',
         '/frequently-asked-questions',
         '/house-cleaning-checklist',
+        '/sitemap',
 
         '/deep-cleaning-brisbane',
         '/regular-cleaning-brisbane',

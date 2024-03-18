@@ -1,10 +1,7 @@
 import React from 'react';
-import { BreadcrumbJsonLd, OrganizationJsonLd } from 'next-seo';
 import { Shell } from '@/components/shell';
 import { type Metadata } from 'next';
 import Commitment from '@/components/commitment';
-import { absoluteUrl } from '@/lib/utils';
-import { siteConfig } from '@/configs/site';
 import Services from './_components/services';
 import About from '@/components/about';
 
@@ -44,39 +41,6 @@ export default function Page() {
                 <LatestBlog />
                 <Commitment />
             </Shell>
-            <OrganizationJsonLd
-                useAppDir
-                id={absoluteUrl('')}
-                name={siteConfig.title}
-                description={siteConfig.description}
-                legalName={siteConfig.name}
-                url={absoluteUrl('')}
-                logo={absoluteUrl('/')}
-                sameAs={[
-                    siteConfig.links.facebook,
-                    siteConfig.links.linkin,
-                    siteConfig.links.instagram,
-                    siteConfig.links.twitter,
-                    siteConfig.links.youtube,
-                ]}
-                address={{
-                    streetAddress: '401 / 249 George St',
-                    addressLocality: 'Waterloo',
-                    addressRegion: 'NSW',
-                    postalCode: '2017',
-                    addressCountry: 'AU',
-                }}
-            />
-            <BreadcrumbJsonLd
-                useAppDir
-                itemListElements={[
-                    {
-                        position: 1,
-                        name: 'Home',
-                        item: absoluteUrl(''),
-                    },
-                ]}
-            />
         </>
     );
 }

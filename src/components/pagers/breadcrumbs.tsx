@@ -102,16 +102,6 @@ export function Breadcrumbs({
                     );
                 })}
             </nav>
-            <BreadcrumbJsonLd
-                useAppDir
-                itemListElements={segments.map((segment, idx) => {
-                    return {
-                        position: idx + 1,
-                        name: segment.title,
-                        item: absoluteUrl(segment.href),
-                    };
-                })}
-            />
         </>
     );
 }

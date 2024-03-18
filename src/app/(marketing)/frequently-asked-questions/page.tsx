@@ -5,6 +5,7 @@ import { type Metadata } from 'next';
 import { PageHeader, PageHeaderHeading } from '@/components/page-header';
 import AccordionList from '@/components/accordion-list';
 import { getPathname } from '@/lib/next';
+import { siteConfig } from '@/configs/site';
 
 export const runtime = 'edge';
 
@@ -12,8 +13,8 @@ export function generateMetadata(): Metadata {
     const pathname = getPathname();
 
     return {
-        title: 'Frequently Asked Questions About Bond Cleaning',
-        description: `Find the answers you're looking for a house cleaning service.`,
+        title: `Frequently Asked Questions About ${siteConfig.name}`,
+        description: `Find the answers you're looking for our cleaning service.`,
         alternates: {
             canonical: pathname,
         },

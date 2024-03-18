@@ -115,7 +115,6 @@ export const siteConfig = {
         {
             title: 'Useful Links',
             items: [
-                { title: 'Services', href: '/cleaning-services' },
                 { title: 'Contact Us', href: '/contact' },
                 { title: 'Blog', href: '/blog' },
                 { title: 'Pricing', href: '/house-cleaning-pricing-brisbane' },
@@ -142,7 +141,7 @@ export const siteConfig = {
     },
     rating: {
         ratingValue: '4.9',
-        ratingCount: '727',
+        ratingCount: 727,
     },
 };
 

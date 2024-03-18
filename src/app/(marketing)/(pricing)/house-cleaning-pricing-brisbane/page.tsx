@@ -15,7 +15,7 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
-import { Metadata } from 'next';
+import { type Metadata } from 'next';
 
 import FAQs from '../_components/faqs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,13 +24,21 @@ import { Author, allAuthors } from 'contentlayer/generated';
 import Link from 'next/link';
 import { Icons } from '@/components/icons';
 import { formatDate } from '@/lib/utils';
+import { getPathname } from '@/lib/next';
 
 export const runtime = 'edge';
 
-export const metadata: Metadata = {
-    title: 'House Cleaning Prices In Brisbane',
-    description: `Get crystal clear pricing on Brisbane's top-rated house cleaning services. Find the perfect fit for your budget and needs, with options from weekly refreshes to deep dives.`,
-};
+export function generateMetadata(): Metadata {
+    const pathname = getPathname();
+
+    return {
+        title: 'House Cleaning Prices In Brisbane',
+        description: `Get crystal clear pricing on Brisbane's top-rated house cleaning services. Find the perfect fit for your budget and needs, with options from weekly refreshes to deep dives.`,
+        alternates: {
+            canonical: pathname,
+        },
+    };
+}
 
 const pricingList = [
     {

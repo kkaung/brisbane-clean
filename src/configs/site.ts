@@ -18,7 +18,7 @@ const links = {
 export const siteConfig = {
     logo: 'MasterMaid',
     name: 'Master Maid',
-    title: `Brisbane's Premium House Cleaning Serivce | Master Maid`,
+    title: `Master Maid - Cleaning Serivce Brisbane`,
     description: `Our top-rated cleaning services come with a 200% satisfaction guarantee. We deliver sparkling results you'll love with our professional cleaners. Book online in 60 seconds!`,
     url: 'https://mastermaid.com.au',
     ogImage: 'https://mastermaid.com.au/opengraph-image.png',
@@ -127,14 +127,14 @@ export const siteConfig = {
         {
             title: 'Company',
             items: [
-                { title: 'About Us', href: '/about' },
+                { title: 'About Us', href: '/about-us' },
                 { title: 'Careers', href: '/careers' },
                 { title: 'Sitemap', href: '/sitemap' },
             ],
         },
     ] satisfies FooterItem[],
     business: {
-        email: 'contact@moreclean.com.au',
+        email: 'contact@mastermaid.com.au',
         phone: '1302 245 417',
         address: '401/249 George St, 2017 NSW',
         openingHour: 'Mon – Sun: 9:00 AM – 5:00 PM',

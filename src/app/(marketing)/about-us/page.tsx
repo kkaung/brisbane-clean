@@ -47,8 +47,7 @@ export default function page() {
                     <p>
                         <Link href="/">{siteConfig.name}</Link> emerged from the
                         visionary mind of{' '}
-                        <Link href="/authors/kaung">Kaung Zaw</Link>, a Gold
-                        Coast resident deeply attuned to the transformative
+                        <Link href="/authors/kaung">Kaung Zaw</Link>, a Brisbane resident deeply attuned to the transformative
                         influence of a tidy home on personal well-being.
                         Recognizing the fast pace of contemporary living, Haroun
                         conceptualized a dependable, top-tier cleaning service
@@ -59,11 +58,11 @@ export default function page() {
                 <section>
                     <h2>The Mission</h2>
                     <p>
-                        Under Kaung&apos;s visionary leadership, Coast Maid
+                        Under Kaung&apos;s visionary leadership, Master Maid
                         transcended its origins as a mere cleaning service,
                         evolving into a catalyst for enhanced lifestyles. By
                         relieving individuals of the burdensome task of
-                        household chores, Coast Maid strives to elevate the
+                        household chores, Master Maid strives to elevate the
                         overall quality of life. Kaung perceives his company not
                         only as a business entity but also as an indispensable
                         cornerstone of the community.
@@ -72,7 +71,7 @@ export default function page() {
                 <section>
                     <h2>The Future</h2>
                     <p>
-                        Kaung&apos;s aspirations for Coast Maid reach far beyond
+                        Kaung&apos;s aspirations for Master Maid reach far beyond
                         traditional cleaning services. His goal is to
                         revolutionize customer satisfaction within the industry,
                         constantly adapting to meet the changing needs of

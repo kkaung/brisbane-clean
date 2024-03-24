@@ -23,13 +23,21 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                         aria-labelledby="footer-branding-heading"
                         className="w-full lg:max-w-sm"
                     >
-                        <Link
-                            aria-label="Home"
-                            href="/"
-                            className="text-2xl italic flex items-center space-x-2"
-                        >
-                            <span className="font-bold">{siteConfig.logo}</span>
-                        </Link>
+                        <div className="relative">
+                            <div className="text-2xl italic flex items-center space-x-2 font-bold">
+                                {siteConfig.logo}
+                            </div>
+                            <Link
+                                aria-label="Home"
+                                href="/"
+                                className="inset-0 absolute"
+                                title={siteConfig.title}
+                            >
+                                <span className="sr-only">
+                                    {siteConfig.title}
+                                </span>
+                            </Link>
+                        </div>
                         <p className="my-4 max-w-xs text-xs md:text-sm">
                             We transform Brisbane homes from chaotic havens into
                             sparkling sanctuaries, all while respecting the

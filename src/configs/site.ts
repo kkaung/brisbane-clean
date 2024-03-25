@@ -4,12 +4,12 @@ import type { FooterItem, MainNavItem } from '@/types';
 export type SiteConfig = typeof siteConfig;
 
 const links = {
-    facebook: 'https://www.linkedin.com/company/',
-    instagram: 'https://instagram.com/',
-    twitter: 'https://twitter.com/',
-    pinterest: 'https://www.pinterest.com.au/',
-    linkin: 'https://www.linkedin.com/company/',
-    youtube: 'https://www.youtube.com/channel/',
+    facebook: 'https://www.facebook.com/p/Master-Maid-61557584825753/',
+    instagram: 'https://www.instagram.com/mastermaidau',
+    twitter: 'https://twitter.com/mastermaid_',
+    pinterest: 'https://www.pinterest.com.au/mastermaid_',
+    linkin: 'https://www.linkedin.com/company/master-maid',
+    youtube: 'https://www.youtube.com/channel/UC5sXd89738AKwrieLN00xbQ',
     googlemap: '',
 
     yelp: 'https://www.yelp.com/biz/',
@@ -136,7 +136,7 @@ export const siteConfig = {
     business: {
         email: 'contact@mastermaid.com.au',
         phone: '1302 245 417',
-        address: '401/249 George St, 2017 NSW',
+        address: '19 Ann St, Brisbane City QLD 4000',
         openingHour: 'Mon – Sun: 9:00 AM – 5:00 PM',
     },
     rating: {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { SlashIcon } from '@radix-ui/react-icons';
-import {  cn, truncate } from '@/lib/utils';
+import { cn, truncate } from '@/lib/utils';
 import { Icons } from '@/components/icons';
 import { siteConfig } from '@/configs/site';
 import Dot from '@/components/dot';

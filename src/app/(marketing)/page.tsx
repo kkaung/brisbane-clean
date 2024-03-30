@@ -17,11 +17,12 @@ import LatestBlog from './_components/latest-blog';
 import Featuring from './_components/featuring';
 import SocialVideos from '@/components/social-videos';
 import { ServicesDialog } from '@/components/services-dialog';
+import { siteConfig } from '@/configs/site';
 
 export const runtime = 'edge';
 
 export const metadata: Metadata = {
-    title: `Brisbane's Top-Rated House Cleaning Service`,
+    title: `${siteConfig.name}`,
     description: `Our top-rated cleaning services come with a 200% satisfaction guarantee. We deliver sparkling results you'll love with our expert cleaners. Book online in 60 seconds!`,
 };
 

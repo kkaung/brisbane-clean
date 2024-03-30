@@ -7,7 +7,7 @@ const links = {
     facebook: 'https://www.facebook.com/p/Master-Maid-61557584825753/',
     instagram: 'https://www.instagram.com/mastermaidau',
     twitter: 'https://twitter.com/mastermaid_',
-    pinterest: 'https://www.pinterest.com.au/mastermaid_',
+    pinterest: 'https://www.pinterest.com/mastermaid_',
     linkin: 'https://www.linkedin.com/company/master-maid',
     youtube: 'https://www.youtube.com/channel/UC5sXd89738AKwrieLN00xbQ',
     googlemap: '',
@@ -18,7 +18,7 @@ const links = {
 export const siteConfig = {
     logo: 'MasterMaid',
     name: 'Master Maid',
-    title: `Master Maid - Cleaning Serivce Brisbane`,
+    title: `Master Maid Brisbane - Professional Cleaning Serivce in Brisbane`,
     description: `Our top-rated cleaning services come with a 200% satisfaction guarantee. We deliver sparkling results you'll love with our professional cleaners. Book online in 60 seconds!`,
     url: 'https://mastermaid.com.au',
     ogImage: 'https://mastermaid.com.au/opengraph-image.png',

@@ -40,6 +40,9 @@ const SiteHeader = ({ ...props }: SiteHeaderProps) => {
                     </div>
                 </div>
                 <nav className="flex lg:flex-1 gap-4 items-center justify-between">
+                    <div className="sr-only">
+                        <Link href="/">Cleaner Brisbane</Link>
+                    </div>
                     <MainNav items={siteConfig.mainNav} />
                     <div className="gap-3 flex items-center sm:gap-4 md:gap-6">
                         <Button variant="secondary">

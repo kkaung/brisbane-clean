@@ -58,10 +58,7 @@ export function Breadcrumbs({
                                     href="/"
                                     title={`${siteConfig.name} - House Cleaning Service In Brisbane`}
                                 >
-                                    <Icons.home
-                                        aria-hidden
-                                        className="w-4 h-4"
-                                    />
+                                    {siteConfig.title}
                                 </Link>
                             ) : (
                                 <Link

@@ -5,8 +5,6 @@ import { type Metadata } from 'next';
 import { getMetadata } from '../_components/metadata';
 import Content from '../_components/content';
 
-export const runtime = 'edge';
-
 export async function generateMetadata(): Promise<Metadata> {
     const city = getCityFromPath();
 
@@ -23,7 +21,7 @@ export default function Page() {
                 { title: 'Home', href: '/' },
                 {
                     title: 'After Builder Cleaning',
-                    href: '/after-builder-cleaning-perth',
+                    href: '/after-builder-cleaning-brisbane',
                 },
             ]}
         />

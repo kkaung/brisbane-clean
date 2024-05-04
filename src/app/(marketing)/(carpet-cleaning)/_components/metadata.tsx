@@ -5,7 +5,7 @@ export const getMetadata = (location: string): Metadata => {
     const pathname = getPathname();
 
     return {
-        title: `Carpet Cleaning Service In ${location} - Carpet Stain Removal`,
+        title: `#1 Carpet Cleaning Service in ${location} - Carpet Cleaner ${location}`,
         description: `${location}'s top carpet cleaner tackles even the toughest stains. Breathe life back into your carpets! Book online in 60 seconds.`,
         alternates: {
             canonical: pathname,

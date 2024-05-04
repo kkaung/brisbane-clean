@@ -17,8 +17,8 @@ const links = {
 
 export const siteConfig = {
     logo: 'MasterMaid',
-    name: 'Master Maid',
-    title: `Master Maid Brisbane - Professional Cleaning Serivce in Brisbane`,
+    name: 'Master Maid Brisbane',
+    title: `Master Maid Brisbane`,
     description: `Our top-rated cleaning services come with a 200% satisfaction guarantee. We deliver sparkling results you'll love with our professional cleaners. Book online in 60 seconds!`,
     url: 'https://mastermaid.com.au',
     ogImage: 'https://mastermaid.com.au/opengraph-image.png',
@@ -75,40 +75,44 @@ export const siteConfig = {
             title: 'Services',
             items: [
                 {
-                    title: 'Deep Cleaning',
+                    title: 'Deep Cleaning Brisbane',
                     href: '/deep-cleaning-brisbane',
                 },
                 {
-                    title: 'Regular Cleaning',
+                    title: 'Regular Cleaning Brisbane',
                     href: '/regular-cleaning-brisbane',
                 },
                 {
-                    title: 'Bond Cleaning',
+                    title: 'Bond Cleaning Brisbane',
                     href: '/bond-cleaning-brisbane',
                 },
                 {
-                    title: 'Office Cleaning',
+                    title: 'Office Cleaning Brisbane',
                     href: '/office-cleaning-brisbane',
                 },
                 {
-                    title: 'Oven Cleaning',
+                    title: 'Oven Cleaning Brisbane',
                     href: '/oven-cleaning-brisbane',
                 },
                 {
-                    title: 'Carpet Cleaning',
+                    title: 'Carpet Cleaning Brisbane',
                     href: '/carpet-cleaning-brisbane',
                 },
                 {
-                    title: 'Window Cleaning',
+                    title: 'Window Cleaning Brisbane',
                     href: '/window-cleaning-brisbane',
                 },
                 {
-                    title: 'After Builder Cleaning',
+                    title: 'After Builder Cleaning Brisbane',
                     href: '/after-builder-cleaning-brisbane',
                 },
                 {
-                    title: 'Airbnb Cleaning',
+                    title: 'Airbnb Cleaning Brisbane',
                     href: '/airbnb-cleaning-brisbane',
+                },
+                {
+                    title: 'House Cleaning Service Brisbane',
+                    href: '/',
                 },
             ],
         },
@@ -126,17 +130,13 @@ export const siteConfig = {
         },
         {
             title: 'Company',
-            items: [
-                { title: 'About Us', href: '/about-us' },
-                { title: 'Careers', href: '/careers' },
-                { title: 'Sitemap', href: '/sitemap' },
-            ],
+            items: [{ title: 'About Us', href: '/about-us' }],
         },
     ] satisfies FooterItem[],
     business: {
         email: 'contact@mastermaid.com.au',
-        phone: '1302 245 417',
-        address: '19 Ann St, Brisbane City QLD 4000',
+        phone: '+61 414076980',
+        address: 'Suite 101, 3/123 Albert St, Brisbane City QLD 4000',
         openingHour: 'Mon – Sun: 9:00 AM – 5:00 PM',
     },
     rating: {

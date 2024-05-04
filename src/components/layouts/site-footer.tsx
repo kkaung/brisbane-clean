@@ -24,25 +24,21 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                         className="w-full lg:max-w-sm"
                     >
                         <div className="relative">
-                            <div className="text-2xl italic flex items-center space-x-2 font-bold">
-                                {siteConfig.logo}
-                            </div>
                             <Link
                                 aria-label="Home"
                                 href="/"
-                                className="inset-0 absolute"
+                                className="text-2xl italic flex items-center space-x-2 font-bold"
                                 title={siteConfig.title}
                             >
-                                <span className="sr-only">
-                                    {siteConfig.title}
-                                </span>
+                                {siteConfig.title}
+                            </Link>
+                            <Link
+                                href="/"
+                                className="font-medium text-sm hover:underline"
+                            >
+                                Cleaner Near Me
                             </Link>
                         </div>
-                        <p className="my-4 max-w-xs text-xs md:text-sm">
-                            We transform Brisbane homes from chaotic havens into
-                            sparkling sanctuaries, all while respecting the
-                            environment and your peace of mind.
-                        </p>
                         <div className="flex flex-col mt-2 space-y-2">
                             <div className={cn('cursor-pointer text-sm')}>
                                 <Icons.mail
@@ -90,26 +86,24 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                                 <div className="text-base font-medium">
                                     {item.title}
                                 </div>
-                                <ul className="space-y-2">
+                                <nav className="space-y-2">
                                     {item.items.map(link => (
-                                        <li key={link.title}>
-                                            <Link
-                                                href={link.href}
-                                                className="text-sm transition-colors line-clamp-1"
-                                                title={toTitleCase(
-                                                    unslugify(link.href)
-                                                )}
-                                            >
-                                                {link.title}
-                                            </Link>
-                                        </li>
+                                        <Link
+                                            key={link.title}
+                                            href={link.href}
+                                            className="text-sm transition-colors line-clamp-1"
+                                            title={toTitleCase(
+                                                unslugify(link.href)
+                                            )}
+                                        >
+                                            {link.title}
+                                        </Link>
                                     ))}
-                                </ul>
+                                </nav>
                             </div>
                         ))}
                     </section>
                 </section>
-                <FooterTabs />
                 <section
                     id="footer-bottom"
                     aria-labelledby="footer-bottom-heading"
@@ -173,15 +167,6 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                             title="Pinterest"
                         >
                             <Icons.pinterest aria-hidden className="h-4 w-4" />
-                        </Link>
-                        <Link
-                            aria-label="Yelp"
-                            target="_blank"
-                            href={siteConfig.links.yelp}
-                            rel="nofollow"
-                            title="Yelp"
-                        >
-                            <Icons.yelp aria-hidden className="h-4 w-4" />
                         </Link>
                     </div>
                 </section>

@@ -7,7 +7,7 @@ import {
 import { Breadcrumbs } from '@/components/pagers/breadcrumbs';
 import { Shell } from '@/components/shell';
 import { siteConfig } from '@/configs/site';
-import { type Author, allAuthors, allPosts } from 'contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 import { type Metadata } from 'next';
 import {
     Pagination,
@@ -18,23 +18,17 @@ import {
     PaginationNext,
     PaginationPrevious,
 } from '@/components/ui/pagination';
-import { getPathname } from '@/lib/next';
 
 import { BlogTabs } from './_components/blog-tabs';
-
 import PostCard from './_components/post-card';
 
-export const runtime = 'edge';
-
 export function generateMetadata(): Metadata {
-    const pathname = getPathname();
-
     return {
         title: 'Expert House Cleaning Tips And Tricks Blog',
         description:
             'Uncover professional insights, expert advice, and clever hacks to make house cleaning a breeze. Get a clean home you love!',
         alternates: {
-            canonical: pathname,
+            canonical: '/blog',
         },
     };
 }
@@ -56,19 +50,11 @@ export default function Page() {
             </PageHeader>
             <section className="mt-8 max-w-5xl w-full mx-auto">
                 <BlogTabs />
-                <ul className="grid gap-6 grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3">
+                <div className="grid gap-6 grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3">
                     {allPosts.map((post, idx) => {
-                        const author = allAuthors.find(
-                            author => author.slugAsParams === post.author
-                        ) as Author;
-
-                        return (
-                            <li key={idx}>
-                                <PostCard post={post} author={author} />
-                            </li>
-                        );
+                        return <PostCard post={post} key={idx} />;
                     })}
-                </ul>
+                </div>
                 <Pagination className="mt-8">
                     <PaginationContent>
                         <PaginationItem>

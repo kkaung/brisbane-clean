@@ -1,5 +1,11 @@
 import { siteConfig } from '@/configs/site';
-import type { Graph, Organization, Product, WebSite } from 'schema-dts';
+import type {
+    Graph,
+    LocalBusiness,
+    Organization,
+    Product,
+    WebSite,
+} from 'schema-dts';
 import { absoluteUrl } from './utils';
 
 const isBrowser = typeof window !== 'undefined';
@@ -45,6 +51,21 @@ export const WebSiteSchema: WebSite = {
     name: siteConfig.title,
     description: siteConfig.description,
     inLanguage: 'en-GB',
+};
+
+export const LocalBusinessSchema: LocalBusiness = {
+    '@type': 'LocalBusiness',
+    name: siteConfig.name,
+    image: absoluteUrl('/images/logo.png'),
+    email: siteConfig.business.email,
+    telephone: siteConfig.business.phone,
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Suite 101, 3/123 Albert St',
+        postalCode: '4000',
+        addressLocality: 'Brisbane City',
+        addressCountry: 'Australia',
+    },
 };
 
 export const graphSchemas: Graph = {

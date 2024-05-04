@@ -9,18 +9,13 @@ import {
 } from '@/components/page-header';
 import Link from 'next/link';
 import { Breadcrumbs } from '@/components/pagers/breadcrumbs';
-import { getPathname } from '@/lib/next';
-
-export const runtime = 'edge';
 
 export function generateMetadata(): Metadata {
-    const pathname = getPathname();
-
     return {
         title: `About Us - ${siteConfig.name}`,
         description: `Join us on our journey to revolutionize the cleaning industry! Get acquainted with our dedicated field and office staff members, and learn about the inception of ${siteConfig.name}.`,
         alternates: {
-            canonical: pathname,
+            canonical: '/about-us',
         },
     };
 }
@@ -46,33 +41,33 @@ export default function page() {
                     <h2>The Genesis</h2>
                     <p>
                         <Link href="/">{siteConfig.name}</Link> emerged from the
-                        visionary mind of{' '}
-                        <Link href="/authors/kaung">Kaung Zaw</Link>, a Brisbane resident deeply attuned to the transformative
-                        influence of a tidy home on personal well-being.
-                        Recognizing the fast pace of contemporary living, Haroun
-                        conceptualized a dependable, top-tier cleaning service
-                        aimed at affording individuals the luxury of time and
-                        the serenity of a pristine living space.
+                        visionary mind of Kelvin, a Brisbane resident deeply
+                        attuned to the transformative influence of a tidy home
+                        on personal well-being. Recognizing the fast pace of
+                        contemporary living, Haroun conceptualized a dependable,
+                        top-tier cleaning service aimed at affording individuals
+                        the luxury of time and the serenity of a pristine living
+                        space.
                     </p>
                 </section>
                 <section>
                     <h2>The Mission</h2>
                     <p>
-                        Under Kaung&apos;s visionary leadership, Master Maid
+                        Under Kelvin&apos;s visionary leadership, Master Maid
                         transcended its origins as a mere cleaning service,
                         evolving into a catalyst for enhanced lifestyles. By
                         relieving individuals of the burdensome task of
                         household chores, Master Maid strives to elevate the
-                        overall quality of life. Kaung perceives his company not
-                        only as a business entity but also as an indispensable
-                        cornerstone of the community.
+                        overall quality of life. Kelvin perceives his company
+                        not only as a business entity but also as an
+                        indispensable cornerstone of the community.
                     </p>
                 </section>
                 <section>
                     <h2>The Future</h2>
                     <p>
-                        Kaung&apos;s aspirations for Master Maid reach far beyond
-                        traditional cleaning services. His goal is to
+                        Kelvin&apos;s aspirations for Master Maid reach far
+                        beyond traditional cleaning services. His goal is to
                         revolutionize customer satisfaction within the industry,
                         constantly adapting to meet the changing needs of
                         clients. While services may expand and diversify, the

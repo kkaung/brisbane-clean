@@ -26,8 +26,6 @@ import { Icons } from '@/components/icons';
 import { formatDate } from '@/lib/utils';
 import { getPathname } from '@/lib/next';
 
-export const runtime = 'edge';
-
 export function generateMetadata(): Metadata {
     const pathname = getPathname();
 
@@ -35,7 +33,7 @@ export function generateMetadata(): Metadata {
         title: 'House Cleaning Prices In Brisbane',
         description: `Get crystal clear pricing on Brisbane's top-rated house cleaning services. Find the perfect fit for your budget and needs, with options from weekly refreshes to deep dives.`,
         alternates: {
-            canonical: pathname,
+            canonical: '/house-cleaning-pricing-brisbane',
         },
     };
 }
@@ -122,47 +120,6 @@ export default function Page() {
                 </Table>
             </section>
             <FAQs />
-            <section className="my-8 max-w-xl mx-auto">
-                <Card className="border-0 bg-secondary/50 rounded-xl">
-                    <CardHeader>
-                        <div className="flex gap-4">
-                            <CardTitle>
-                                <Avatar>
-                                    <AvatarImage
-                                        src={author.avatar}
-                                        alt="Author Avatar"
-                                    />
-                                    <AvatarFallback>
-                                        {author.title.charAt(0).toUpperCase()}
-                                    </AvatarFallback>
-                                </Avatar>
-                            </CardTitle>
-                            <div className="font-semibold">
-                                <p className="text-xs text-muted-foreground">
-                                    Article by
-                                </p>
-                                <Link href={`/authors/${author.slugAsParams}`}>
-                                    <p className="relative text-primary hover:underline">
-                                        {author.title}
-                                    </p>
-                                </Link>
-                            </div>
-                        </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4 text-foreground">
-                        <p className="text-foreground">{author.description}</p>
-                        <div className="flex gap-4">
-                            <Link
-                                aria-label="Linkin"
-                                target="_blank"
-                                href={`https://www.linkedin.com/in/${author.linkin}`}
-                            >
-                                <Icons.linkin aria-hidden className="h-4 w-4" />
-                            </Link>
-                        </div>
-                    </CardContent>
-                </Card>
-            </section>
         </Shell>
     );
 }

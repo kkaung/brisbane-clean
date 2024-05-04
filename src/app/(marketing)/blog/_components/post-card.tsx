@@ -8,10 +8,9 @@ import React, { type HTMLAttributes } from 'react';
 
 interface PostCardProps extends HTMLAttributes<HTMLElement> {
     post: Post;
-    author: Author;
 }
 
-export default function PostCard({ post, author, ...props }: PostCardProps) {
+export default function PostCard({ post, ...props }: PostCardProps) {
     return (
         <section className={cn(props.className, 'relative  space-y-2')}>
             <AspectRatio
@@ -40,17 +39,6 @@ export default function PostCard({ post, author, ...props }: PostCardProps) {
                     <h4 className="text-xl font-semibold hover:underline">
                         {post.title}
                     </h4>
-                </Link>
-            </div>
-            <div className="flex gap-2 items-center">
-                <Avatar className="w-8 h-8">
-                    <AvatarImage src={author?.avatar} alt="Author Avatar" />
-                    <AvatarFallback>
-                        {author?.title.charAt(0).toUpperCase()}
-                    </AvatarFallback>
-                </Avatar>
-                <Link href={`/authors/${author?.slugAsParams}`}>
-                    <p className="text-sm hover:underline">{author?.title}</p>
                 </Link>
             </div>
         </section>

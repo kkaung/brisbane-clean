@@ -47,17 +47,13 @@ export async function generateMetadata({
     ogUrl.searchParams.set('type', 'Blog Post');
     ogUrl.searchParams.set('mode', 'dark');
 
-    const author = allAuthors.find(
-        author => author.slugAsParams === post.author
-    ) as Author;
-
     return {
         title: post.title,
         description: post.description,
         authors: [
             {
-                name: author.title,
-                url: absoluteUrl(`/authors/${author.slugAsParams}`),
+                name: siteConfig.title,
+                url: absoluteUrl('/'),
             },
         ],
         alternates: {
@@ -99,10 +95,6 @@ export default async function PostPage({ params }: PostPageProps) {
 
     if (!post) notFound();
 
-    const author = allAuthors.find(
-        author => author.slugAsParams === post.author
-    ) as Author;
-
     return (
         <article className="container relative max-w-3xl py-6 lg:py-10">
             <Link
@@ -128,26 +120,15 @@ export default async function PostPage({ params }: PostPageProps) {
                     )}
                 </div>
                 <div className="mt-4 flex space-x-4">
-                    <div
-                        key={author._id}
-                        className="flex gap-2 items-center justify-center"
-                    >
-                        <Image
-                            src={author.avatar}
-                            alt={author.title}
-                            width={42}
-                            height={42}
-                            className="rounded-full bg-white"
-                        />
+                    <div className="flex gap-2 items-center justify-center">
                         <div className="flex flex-col ">
                             <div className="flex items-center gap-2">
                                 <p className="font-semibold">
-                                    by
                                     <Link
-                                        href={`/authors/${author.slugAsParams}`}
+                                        href={`/`}
                                         className="ml-1 hover:underline"
                                     >
-                                        {author.title}
+                                        {siteConfig.name}
                                     </Link>
                                 </p>
                                 <Dot />
@@ -170,56 +151,12 @@ export default async function PostPage({ params }: PostPageProps) {
                 />
             )}
             <Mdx code={post.body.code} />
-            <section className="my-8">
-                <Card className="border-0 bg-secondary/50 rounded-xl">
-                    <CardHeader>
-                        <div className="flex gap-4">
-                            <CardTitle>
-                                <Avatar>
-                                    <AvatarImage
-                                        src={author.avatar}
-                                        alt="Author Avatar"
-                                    />
-                                    <AvatarFallback>
-                                        {author.title.charAt(0).toUpperCase()}
-                                    </AvatarFallback>
-                                </Avatar>
-                            </CardTitle>
-                            <div className="font-semibold">
-                                <p className="text-xs text-muted-foreground">
-                                    Article by
-                                </p>
-                                <Link href={`/authors/${author.slugAsParams}`}>
-                                    <p className="relative text-primary hover:underline">
-                                        {author.title}
-                                    </p>
-                                </Link>
-                            </div>
-                        </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4 text-foreground">
-                        <p className="text-foreground">{author.description}</p>
-                        <div className="flex gap-4">
-                            <Link
-                                aria-label="Linkin"
-                                target="_blank"
-                                href={`https://www.linkedin.com/in/${author.linkin}`}
-                            >
-                                <Icons.linkin aria-hidden className="h-4 w-4" />
-                            </Link>
-                        </div>
-                    </CardContent>
-                </Card>
-            </section>
-            <section
-                id="bond-cleaners"
-                className="bg-secondary/50 p-6 rounded-lg space-y-4"
-            >
+            <section className="bg-secondary/50 p-6 rounded-lg space-y-4 mt-8">
                 <div className="space-y-2">
                     <h3 className="font-semibold text-lg">{siteConfig.name}</h3>
                     <p className="text-sm">
                         <Link href="/">{siteConfig.name} </Link> is a top-rated
-                        house cleaning company in Brisbane . We offer tailored
+                        house cleaning company in Brisbane. We offer tailored
                         cleaning services for your homes, apartments and
                         offices.
                     </p>

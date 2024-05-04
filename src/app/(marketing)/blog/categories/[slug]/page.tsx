@@ -3,7 +3,7 @@ import React from 'react';
 import { type Metadata } from 'next';
 import { Breadcrumbs } from '@/components/pagers/breadcrumbs';
 import { PageHeaderHeading } from '@/components/page-header';
-import { Author, allAuthors, allPosts } from 'contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 import {
     PaginationPrevious,
     Pagination,
@@ -46,19 +46,11 @@ export default function Page({ params }: PageProps) {
             </PageHeaderHeading>
             <section className="mt-8 max-w-5xl w-full mx-auto">
                 <BlogTabs />
-                <ul className="grid gap-6 grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3">
+                <div className="grid gap-6 grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3">
                     {allPosts.map((post, idx) => {
-                        const author = allAuthors.find(
-                            author => author.slugAsParams === post.author
-                        ) as Author;
-
-                        return (
-                            <li key={idx}>
-                                <PostCard post={post} author={author} />
-                            </li>
-                        );
+                        return <PostCard post={post} key={idx} />;
                     })}
-                </ul>
+                </div>
                 <Pagination className="mt-8">
                     <PaginationContent>
                         <PaginationItem>

@@ -16,7 +16,7 @@ const links = {
 };
 
 export const siteConfig = {
-    logo: 'MasterMaid',
+    logo: 'Master Maid Brisbane',
     name: 'Master Maid Brisbane',
     title: `Master Maid Brisbane`,
     description: `Our top-rated cleaning services come with a 200% satisfaction guarantee. We deliver sparkling results you'll love with our professional cleaners. Book online in 60 seconds!`,

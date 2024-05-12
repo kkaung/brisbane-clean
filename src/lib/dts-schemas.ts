@@ -18,7 +18,13 @@ export const OrganizationSchema: Organization = {
     ...(isBrowser && { url: absoluteUrl(window.location.pathname) }),
     email: siteConfig.business.email,
     telephone: siteConfig.business.phone,
-    address: siteConfig.business.address,
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Suite 101, 3/123 Albert St',
+        postalCode: '4000',
+        addressLocality: 'Brisbane City',
+        addressCountry: 'Australia',
+    },
     sameAs: [
         siteConfig.links.facebook,
         siteConfig.links.linkin,
@@ -70,5 +76,10 @@ export const LocalBusinessSchema: LocalBusiness = {
 
 export const graphSchemas: Graph = {
     '@context': 'https://schema.org',
-    '@graph': [OrganizationSchema, WebSiteSchema, ProductSchema],
+    '@graph': [
+        OrganizationSchema,
+        WebSiteSchema,
+        ProductSchema,
+        LocalBusinessSchema,
+    ],
 };

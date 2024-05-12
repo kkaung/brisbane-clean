@@ -6,6 +6,7 @@ import { cn, toTitleCase, unslugify } from '@/lib/utils';
 import { type HTMLAttributes } from 'react';
 
 import FooterTabs from '../footer-tabs';
+import { links } from '@/configs/link';
 
 interface SiteFooterProps extends HTMLAttributes<HTMLElement> {}
 
@@ -103,6 +104,13 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                             </div>
                         ))}
                     </section>
+                </section>
+                <section className="flex items-center gap-1 text-xs text-muted-foreground flex-wrap">
+                    {links.map(l => (
+                        <Link href={l.link} key={l.title} target="_blank">
+                            {l.title}
+                        </Link>
+                    ))}
                 </section>
                 <section
                     id="footer-bottom"

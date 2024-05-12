@@ -45,7 +45,7 @@ export async function generateMetadata({
     ogUrl.searchParams.set('mode', 'light');
 
     return {
-        title: page.title,
+        title: `${page.title} - ${siteConfig.title}`,
         description: page.description,
         alternates: {
             canonical: pathname,

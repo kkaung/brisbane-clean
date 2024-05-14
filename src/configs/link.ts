@@ -215,4 +215,16 @@ export const links = [
         title: 'Wakelet',
         link: 'https://wakelet.com/@procleaningbrisbane',
     },
+    {
+        title: 'FreeListingAustralia',
+        link: 'https://www.freelistingaustralia.com/listings/pro-cleaning-brisbane',
+    },
+    {
+        title: 'Lasso',
+        link: 'https://www.lasso.net/go/link/XqNGa0',
+    },
+    {
+        title: 'Lasso',
+        link: 'https://theorg.com/org/pro-cleaning-brisbane',
+    },
 ];

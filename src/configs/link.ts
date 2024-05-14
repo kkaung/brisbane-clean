@@ -147,4 +147,72 @@ export const links = [
         title: 'Owler',
         link: 'https://www.owler.com/company/procleaningbrisbane',
     },
+    {
+        title: 'Mystringly',
+        link: 'https://procleaningbrisbane.mystrikingly.com',
+    },
+    {
+        title: 'FreeListingUSA',
+        link: 'https://www.freelistingusa.com/listings/pro-cleaning-brisbane',
+    },
+    {
+        title: 'HelloListing',
+        link: 'https://www.hellolisting.com.au/home-services/cleaning-services/pro-cleaning-brisbane-i31296',
+    },
+    {
+        title: 'Carrd',
+        link: 'https://procleaningbrisbane.carrd.co/',
+    },
+    {
+        title: 'Dailygram',
+        link: 'https://dailygram.com/profile-465326',
+    },
+    {
+        title: 'Heylink',
+        link: 'https://heylink.me/procleaningbrisbane',
+    },
+    {
+        title: 'Shorturl',
+        link: 'https://shorturl.at/mrzBF',
+    },
+    {
+        title: 'Doodleordie',
+        link: 'https://doodleordie.com/profile/procleaningbrisbane',
+    },
+    {
+        title: 'Bento',
+        link: 'https://bento.me/procleaningbrisbane',
+    },
+    {
+        title: 'Cgmimm',
+        link: 'https://www.cgmimm.com/brisbane-city/local-business/pro-cleaning-brisbane',
+    },
+    {
+        title: 'Geocities',
+        link: 'https://geocities.ws/procleaningbrisbane/',
+    },
+    {
+        title: 'Blogger',
+        link: 'https://www.blogger.com/profile/11940769084875501958',
+    },
+    {
+        title: 'Cuttly',
+        link: 'https://cutt.ly/zeeCCJfS',
+    },
+    {
+        title: 'Reverbnation',
+        link: 'https://www.reverbnation.com/procleaningbrisbane',
+    },
+    {
+        title: 'Telegraph',
+        link: 'https://telegra.ph/Pro-Cleaning-Brisbane-Your-Key-to-a-Spotless-Sanctuary-05-13',
+    },
+    {
+        title: 'BizToBiz',
+        link: 'https://www.biztobiz.org/brisbane-city/business-services/pro-cleaning-brisbane',
+    },
+    {
+        title: 'Wakelet',
+        link: 'https://wakelet.com/@procleaningbrisbane',
+    },
 ];

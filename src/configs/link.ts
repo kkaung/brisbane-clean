@@ -220,11 +220,19 @@ export const links = [
         link: 'https://www.freelistingaustralia.com/listings/pro-cleaning-brisbane',
     },
     {
-        title: 'Lasso',
-        link: 'https://www.lasso.net/go/link/XqNGa0',
+        title: 'B2BCo',
+        link: 'https://www.b2bco.com/procleaningbrisbane',
+    },
+    {
+        title: 'LocalBusinessListing',
+        link: 'https://www.localbusinesslisting.org/pro-cleaning-brisbane',
+    },
+    {
+        title: 'BusinessListings',
+        link: 'https://www.businesslistings.net.au/cleaning/Brisbane_City/Pro_Cleaning_Brisbane/987898.aspx',
     },
     {
         title: 'Lasso',
-        link: 'https://theorg.com/org/pro-cleaning-brisbane',
+        link: 'https://www.lasso.net/go/link/XqNGa0',
     },
 ];

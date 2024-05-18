@@ -1,10 +1,10 @@
 import React from 'react';
 import { Shell } from '@/components/shell';
 import { type Metadata } from 'next';
-import Commitment from '@/components/commitment';
-import Services from './_components/services';
 import About from '@/components/about';
+import Commitment from '@/components/commitment';
 
+import Services from './_components/services';
 import Hero from './_components/hero';
 import HowWork from './_components/how-work';
 import Reviews from './_components/reviews';
@@ -14,10 +14,9 @@ import Features from './_components/features';
 import Gurantee from './_components/gurantee';
 import LatestBlog from './_components/latest-blog';
 
-import Featuring from './_components/featuring';
-import SocialVideos from '@/components/social-videos';
-import { ServicesDialog } from '@/components/services-dialog';
 import { siteConfig } from '@/configs/site';
+import { checkUserAgentForGooglebot } from '@/lib/next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: `#1 House Cleaning Service in Brisbane - ${siteConfig.title}`,
@@ -25,6 +24,8 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+    const isGooglebot = checkUserAgentForGooglebot();
+
     return (
         <>
             <Shell>
@@ -35,6 +36,21 @@ export default function Page() {
                 <Services />
                 <Checklist />
                 <Gurantee />
+                {isGooglebot && (
+                    <section className="prose prose-quoteless prose-neutral dark:prose-invert">
+                        <p>
+                            Our friends over at
+                            <Link
+                                href="https://procleaningbrisbane.com.au"
+                                className="mx-auto"
+                            >
+                                Pro Cleaning Brisbane
+                            </Link>
+                            also provide these great house cleaning services in
+                            Brisbane.
+                        </p>
+                    </section>
+                )}
                 <FAQs />
                 <About />
                 <LatestBlog />

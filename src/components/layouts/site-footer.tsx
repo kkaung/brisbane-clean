@@ -28,7 +28,7 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                             <Link
                                 aria-label="Home"
                                 href="/"
-                                className="text-2xl italic flex items-center space-x-2 font-bold"
+                                className="text-xl flex items-center space-x-2 font-bold"
                                 title={siteConfig.title}
                             >
                                 {siteConfig.title}
@@ -46,7 +46,6 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                                     className="w-4 h-4 mr-1 inline"
                                     aria-hidden
                                 />
-                                <span className="sr-only">Email</span>
                                 {siteConfig.business.email}
                             </div>
                             <div className={cn('cursor-pointer text-sm')}>
@@ -54,7 +53,6 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                                     className="w-4 h-4 mr-1 inline"
                                     aria-hidden
                                 />
-                                <span className="sr-only">Phone Number</span>
                                 {siteConfig.business.phone}
                             </div>
                             <div className={cn('cursor-pointer text-sm')}>
@@ -62,7 +60,6 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                                     aria-hidden
                                     className="w-4 h-4 mr-1 inline"
                                 />
-                                <span className="sr-only">Office Address</span>
                                 {siteConfig.business.address}
                             </div>
                             <div className={cn('cursor-pointer text-sm')}>
@@ -70,9 +67,7 @@ export default async function SiteFooter({ ...props }: SiteFooterProps) {
                                     aria-hidden
                                     className="w-4 h-4 mr-1 inline"
                                 />
-                                <span className="sr-only">
-                                    Business Opening Hour
-                                </span>
+
                                 {siteConfig.business.openingHour}
                             </div>
                         </div>

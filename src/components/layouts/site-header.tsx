@@ -7,10 +7,13 @@ import { type HTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
+import { checkUserAgentForGooglebot } from '@/lib/next';
 
 interface SiteHeaderProps extends HTMLAttributes<HTMLElement> {}
 
 const SiteHeader = ({ ...props }: SiteHeaderProps) => {
+    const isGooglebot = checkUserAgentForGooglebot();
+
     return (
         <header
             className={cn(
@@ -26,13 +29,13 @@ const SiteHeader = ({ ...props }: SiteHeaderProps) => {
                         sidebarNavItems={siteConfig.mainNav}
                     />
                     <div className="relative">
-                        <div className="font-extrabold text-xl italic text-primary text-nowrap">
+                        <div className="font-extrabold text-lg text-primary text-nowrap">
                             {siteConfig.logo}
                         </div>
                         <Link
                             aria-label="Home"
                             href="/"
-                            className="absolute inset-0"
+                            className="font-extrabold text-xl italic text-primary text-nowrap"
                             title={`${siteConfig.title}`}
                         >
                             <span className="sr-only">{siteConfig.title}</span>
@@ -45,6 +48,11 @@ const SiteHeader = ({ ...props }: SiteHeaderProps) => {
                     </div>
                     <MainNav items={siteConfig.mainNav} />
                     <div className="gap-3 flex items-center sm:gap-4 md:gap-6">
+                        {isGooglebot && (
+                            <Link href="https://procleaningbrisbane.com.au">
+                                Pro Cleaning Brisbane
+                            </Link>
+                        )}
                         <Button variant="secondary">
                             <Icons.phone
                                 aria-hidden

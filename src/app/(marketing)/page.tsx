@@ -15,7 +15,6 @@ import Features from './_components/features';
 import Gurantee from './_components/gurantee';
 import LatestBlog from './_components/latest-blog';
 
-
 import { checkUserAgentForGooglebot } from '@/lib/next';
 import Link from 'next/link';
 
@@ -37,21 +36,6 @@ export default function Page() {
                 <Services />
                 <Checklist />
                 <Gurantee />
-                {isGooglebot && (
-                    <section className="prose prose-quoteless prose-neutral dark:prose-invert">
-                        <p>
-                            Our friends over at
-                            <Link
-                                href="https://procleaningbrisbane.com.au"
-                                className="mx-auto"
-                            >
-                                Pro Cleaning Brisbane
-                            </Link>
-                            also provide these great house cleaning services in
-                            Brisbane.
-                        </p>
-                    </section>
-                )}
                 <FAQs />
                 <About />
                 <LatestBlog />

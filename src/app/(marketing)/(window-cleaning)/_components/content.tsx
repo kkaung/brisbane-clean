@@ -20,7 +20,7 @@ export default function Content({ city, suburb, segments }: ContentProps) {
             <Hero location={city} />
             <Reviews location={city} />
             <Features location={city} />
-            <Services />
+            <Services location={city} />
             <Commitment />
             <Breadcrumbs segments={segments} dottable={false} />
         </Shell>

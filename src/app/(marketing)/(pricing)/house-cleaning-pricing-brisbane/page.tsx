@@ -18,11 +18,7 @@ import {
 import { type Metadata } from 'next';
 
 import FAQs from '../_components/faqs';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Author, allAuthors } from 'contentlayer/generated';
-import Link from 'next/link';
-import { Icons } from '@/components/icons';
+
 import { formatDate } from '@/lib/utils';
 import { getPathname } from '@/lib/next';
 
@@ -70,10 +66,6 @@ const pricingList = [
 ];
 
 export default function Page() {
-    const author = allAuthors.find(
-        author => author.slugAsParams === 'kaung'
-    ) as Author;
-
     return (
         <Shell as="article">
             <Breadcrumbs

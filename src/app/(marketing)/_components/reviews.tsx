@@ -78,9 +78,9 @@ export default function Reviews({ location, ...props }: ReviewsProps) {
             >
                 <div className="space-y-12">
                     <div className="space-y-4 md:text-center">
-                        <h2 className={cn(headingVariants({}))}>
+                        <h3 className={cn(headingVariants({}))}>
                             <Balancer>What Our Customers Say</Balancer>
-                        </h2>
+                        </h3>
                     </div>
                     <div className="space-y-5">
                         <Marquee
@@ -113,19 +113,15 @@ function ReviewCard({ name, body, ...props }: ReviewCardProps) {
         >
             <div className="flex justify-between">
                 <div className="space-y-2">
-                    <div>
-                        <h6 className="font-medium">{name}</h6>
-                        <p></p>
-                    </div>
-                    <p className="text-sm italic mt-4 text-primary/80">
+                    <div className="font-medium">{name}</div>
+                    <div className="text-sm italic mt-4 text-primary/80">
                         &quot;{body}&quot;
-                    </p>
+                    </div>
                 </div>
                 <div>
                     <Icons.fullGoogle className="w-5 h-5" />
                 </div>
             </div>
-            {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background via-background/80 to-transparent"></div> */}
         </div>
     );
 }

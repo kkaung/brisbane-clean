@@ -1,129 +1,100 @@
-import { cn } from '@/lib/utils';
 import React, { type HTMLAttributes } from 'react';
-import Balancer from 'react-wrap-balancer';
 import { headingVariants } from '@/components/page-header';
-import { Icons } from '@/components/icons';
-import Marquee from '@/components/magicui/marquee';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import Link from 'next/link';
+import { items } from '@/configs/service';
+import { buttonVariants } from '@/components/ui/button';
 
-const getReviews = (location: string) => {
-    return [
-        {
-            name: 'Emily',
-            body: 'RZ Cleaning Team did a great job on our apartment. Everything was spotless and we got 100% of our bond back. I would definitely recommend them for End of Lease cleaning.',
-        },
-        {
-            name: 'Dora',
-            body: 'Our Cleaners provided excellent cleaning for my end of lease. Reliable and friendly people. I would definitely reach out to them again!',
-        },
-        {
-            name: 'Durden',
-            body: 'I am very satisfied with the cleaning service. Brenda was extremely thorough, and my place is spotless! Highly recommend.',
-        },
-        {
-            name: 'Jessie W',
-            body: 'We booked the service for our end of lease cleaning and I couldn’t be happier. The flat is spotless and the service was amazing including the customer service before and after the cleaning. I will totally recommend RZ Cleaning.',
-        },
-        {
-            name: 'Kelly',
-            body: 'Vivi and the team arrived punctually, were very friendly, professional and did a great job. Highly recommend.',
-        },
-        {
-            name: 'Nick',
-            body: 'Very pleased with my end of lease clean from Angie and Yeimy. Great job and a reasonable price!',
-        },
-        {
-            name: 'John',
-            body: 'Amazing job unit was spotless really happy with the result would use for end of lease clean.',
-        },
-        {
-            name: 'Nicole',
-            body: 'Karen and Monica were booked at short notice to do our end-of-lease cleaning - they did a great job, would definitely recommend them!',
-        },
-        {
-            name: 'Melanie',
-            body: `I've used RZ Cleaning twice for bond cleaning, and on both occasions they have been very open and communicative. The cleaning met all my expectations and would recommend them.`,
-        },
-        {
-            name: 'Sarah',
-            body: `Vivi and Robin did an amazing job cleaning the apartment for my end of lease. They were super helpful and responsive and sent a lot of photos after cleaning to ensure satisfaction.`,
-        },
-        {
-            name: 'Peter M',
-            body: `I have used many cleaning companies over the years and RZ Cleaning is the best I have found in ${location} for exit clean.`,
-        },
-        {
-            name: 'Dean',
-            body: 'I am very satisfied with my exit cleaning service. Brenda was extremely thorough, and my place is spotless! Highly recommend.',
-        },
-    ];
-};
+import AfterBuilderCleanImage from '/public/assets/images/after-builder-cleaning.png';
+import DeepCleanImage from '/public/assets/images/deep-cleaning.png';
+import RegularCleanImage from '/public/assets/images/regular-cleaning.png';
+import AirbnbCleanImage from '/public/assets/images/airbnb-cleaning.png';
+import OvenCleanImage from '/public/assets/images/oven-cleaning.png';
+import CarpetCleanImage from '/public/assets/images/carpet-cleaning.png';
+import OfficeCleanImage from '/public/assets/images/office-cleaning.png';
+import BondCleanImage from '/public/assets/images/bond-cleaning.png';
+import WindowCleanImage from '/public/assets/images/window-cleaning.png';
 
-interface ReviewsProps extends HTMLAttributes<HTMLElement> {
+interface ServicesProps extends HTMLAttributes<HTMLElement> {
     location: string;
 }
 
-export default function Reviews({ location, ...props }: ReviewsProps) {
-    const reviews = getReviews(location);
-
-    return (
-        <div style={{ width: '100%', overflowX: 'hidden' }}>
-            <section
-                id="reviews"
-                aria-labelledby="reviews-heading"
-                className={cn(
-                    props.className,
-                    'relative space-y-6 w-full overflow-hidden py-12'
-                )}
-            >
-                <div className="space-y-12">
-                    <div className="space-y-4 md:text-center">
-                        <h2 className={cn(headingVariants({}))}>
-                            <Balancer>What Our Customers Say</Balancer>
-                        </h2>
-                    </div>
-                    <div className="space-y-5">
-                        <Marquee
-                            pauseOnHover
-                            className="transform-cpu [--duration:150s]"
-                        >
-                            {reviews.map(review => (
-                                <ReviewCard key={review.name} {...review} />
-                            ))}
-                        </Marquee>
-                    </div>
-                </div>
-            </section>
-        </div>
+export default function Services({ location, ...props }: ServicesProps) {
+    const filteredItems = items.filter(
+        i => i.title !== 'After Builder Cleaning'
     );
-}
 
-interface ReviewCardProps extends HTMLAttributes<HTMLElement> {
-    name: string;
-    body: string;
-}
-
-function ReviewCard({ name, body, ...props }: ReviewCardProps) {
     return (
-        <div
-            className={cn(
-                props.className,
-                'h-full w-60 min-w-[20rem] leading-tight border rounded-xl p-4 bg-secondary/50 ml-2'
-            )}
+        <section
+            id="services"
+            aria-labelledby="services-heading"
+            className={cn(props.className, 'space-y-12')}
+            {...props}
         >
-            <div className="flex justify-between">
-                <div className="space-y-2">
-                    <div>
-                        <h6 className="font-medium">{name}</h6>
-                        <p></p>
-                    </div>
-                    <p className="text-sm italic mt-4 text-primary/80">
-                        &quot;{body}&quot;
-                    </p>
-                </div>
+            <h3 className={headingVariants({})}>Other Cleaning Services</h3>
+            <div className="mt-6 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {filteredItems.map(i => {
+                    const ImageSrc = getImageSrc(i.image);
+
+                    return (
+                        <div
+                            key={i.title}
+                            className="border rounded-xl overflow-hidden group cursor-pointer"
+                        >
+                            <Link
+                                href={i.href}
+                                title={`${i.title} ${location}`}
+                            >
+                                <Image
+                                    src={ImageSrc!}
+                                    alt={`${i.title} ${location}`}
+                                    className="object-cover object-center aspect-video"
+                                />
+                            </Link>
+                            <div className="p-4">
+                                <Link
+                                    href={i.href}
+                                    title={`${i.title} ${location}`}
+                                    className="font-semibold group-hover:underline"
+                                >
+                                    {i.title}
+                                </Link>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+            <div className="flex items-center justify-center">
                 <div>
-                    <Icons.fullGoogle className="w-5 h-5" />
+                    <Link href="/services" className={cn(buttonVariants())}>
+                        View All Services
+                    </Link>
                 </div>
             </div>
-        </div>
+        </section>
     );
+}
+
+function getImageSrc(image: string) {
+    switch (image) {
+        case 'RegularCleanImage':
+            return RegularCleanImage;
+        case 'DeepCleanImage':
+            return DeepCleanImage;
+        case 'BondCleanImage':
+            return BondCleanImage;
+        case 'OfficeCleanImage':
+            return OfficeCleanImage;
+        case 'OvenCleanImage':
+            return OvenCleanImage;
+        case 'CarpetCleanImage':
+            return CarpetCleanImage;
+        case 'WindowCleanImage':
+            return WindowCleanImage;
+        case 'AfterBuilderCleanImage':
+            return AfterBuilderCleanImage;
+        case 'AirbnbCleanImage':
+            return AirbnbCleanImage;
+    }
 }

@@ -4,6 +4,9 @@ import Image from 'next/image';
 import BookOnlieImage from '/public/assets/images/book-online.png';
 import WeCleanImage from '/public/assets/images/we-clean.png';
 import YouRelaxImage from '/public/assets/images/you-relax.png';
+import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/button';
+import { Icons } from '@/components/icons';
 
 interface HowWorkProps extends HTMLAttributes<HTMLElement> {}
 
@@ -18,9 +21,9 @@ export default function HowWork({ ...props }: HowWorkProps) {
             )}
             {...props}
         >
-            <h2 className="font-extrabold text-4xl">How It Works</h2>
-            <ul className="grid grid-cols-1 gap-6 grid-flow-row md:grid-cols-3">
-                <li>
+            <div className="font-extrabold text-4xl">How It Works</div>
+            <div className="grid grid-cols-1 gap-6 grid-flow-row md:grid-cols-3">
+                <div>
                     <div className="flex space-y-2 gap-4 sm:gap-6 md:flex-col md:gap-4">
                         <Image
                             width={150}
@@ -30,16 +33,16 @@ export default function HowWork({ ...props }: HowWorkProps) {
                             alt="Book Online"
                         />
                         <div className="space-y-3">
-                            <p className="font-semibold text-lg">
+                            <div className="font-semibold text-lg">
                                 1. Book Online
-                            </p>
-                            <p>
+                            </div>
+                            <div>
                                 Book your cleaning service online in 60 seconds.
-                            </p>
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li>
+                </div>
+                <div>
                     <div className="flex space-y-2 gap-4 sm:gap-6 md:flex-col md:gap-4">
                         <Image
                             width={150}
@@ -49,15 +52,17 @@ export default function HowWork({ ...props }: HowWorkProps) {
                             alt="We Clean"
                         />
                         <div className="space-y-3">
-                            <p className="font-semibold text-lg">2. We Clean</p>
-                            <p>
-                                Our cleaners in Brisbane will come over &
-                                professionally clean your home.
-                            </p>
+                            <div className="font-semibold text-lg">
+                                2. We Clean
+                            </div>
+                            <div>
+                                Our cleaners will come over & professionally
+                                clean your home.
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li>
+                </div>
+                <div>
                     <div className="flex space-y-2 gap-4 sm:gap-6 md:flex-col md:gap-4">
                         <Image
                             width={150}
@@ -67,17 +72,28 @@ export default function HowWork({ ...props }: HowWorkProps) {
                             className="md:mx-auto"
                         />
                         <div className="space-y-3">
-                            <p className="font-semibold text-lg">
+                            <div className="font-semibold text-lg">
                                 3. You Relax
-                            </p>
-                            <p>
+                            </div>
+                            <div>
                                 Sit back, relax and have your rental bond
                                 returned.
-                            </p>
+                            </div>
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
+            <div className="flex items-center justify-center">
+                <div>
+                    <Link
+                        href="/house-cleaning-pricing"
+                        className={cn(buttonVariants())}
+                    >
+                        <Icons.dollarSign className="w-4 h-4 mr-1" /> View All
+                        Pricings
+                    </Link>
+                </div>
+            </div>
         </section>
     );
 }

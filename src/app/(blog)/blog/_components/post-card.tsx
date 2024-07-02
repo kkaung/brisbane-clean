@@ -12,35 +12,33 @@ interface PostCardProps extends HTMLAttributes<HTMLElement> {
 
 export default function PostCard({ post, ...props }: PostCardProps) {
     return (
-        <section className={cn(props.className, 'relative  space-y-2')}>
+        <div className={cn(props.className, 'relative  space-y-2')}>
             <AspectRatio
                 ratio={16 / 9}
                 className="overflow-hidden rounded-xl relative"
             >
-                <Image
-                    fill
-                    src={post.image}
-                    alt={`${post.title}`}
-                    className="bg-cover object-cover"
-                />
                 <Link
                     href={`/blog/${post.slugAsParams}`}
                     className="absolute inset-0"
                     title={`${post.title}`}
                 >
-                    <span className="sr-only">View Blog Post</span>
+                    <Image
+                        fill
+                        src={post.image}
+                        alt={`${post.title}`}
+                        className="bg-cover object-cover"
+                    />
                 </Link>
             </AspectRatio>
             <div>
                 <Link
                     href={`/blog/${post.slugAsParams}`}
                     title={`${post.title}`}
+                    className="text-xl font-semibold hover:underline"
                 >
-                    <h4 className="text-xl font-semibold hover:underline">
-                        {post.title}
-                    </h4>
+                    {post.title}
                 </Link>
             </div>
-        </section>
+        </div>
     );
 }

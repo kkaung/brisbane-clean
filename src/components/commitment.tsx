@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import React, { type HTMLAttributes } from 'react';
 import Balancer from 'react-wrap-balancer';
+import { Icons } from './icons';
 
 interface CommitmentProps extends HTMLAttributes<HTMLElement> {}
 
@@ -26,10 +27,10 @@ export default function Commitment({ ...props }: CommitmentProps) {
             </p>
             <div>
                 <Link
-                    href="/book-now"
+                    href="/booking"
                     className={cn(buttonVariants({ size: 'lg' }))}
                 >
-                    Book Now
+                    <Icons.sparkles className="w-4 h-4 mr-1" /> Book Now
                 </Link>
             </div>
         </section>

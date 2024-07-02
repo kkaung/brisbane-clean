@@ -16,13 +16,14 @@ import React, { type HTMLAttributes } from 'react';
 import Image from 'next/image';
 import HeroOneImage from '/public/assets/images/hero-one.jpeg';
 import HeroTwoImage from '/public/assets/images/hero-two.jpeg';
-import HeroThreeImage from '/public/assets/images/hero-three.jpeg';
 import Autoplay from 'embla-carousel-autoplay';
 import { siteConfig } from '@/configs/site';
 
-interface HeroProps extends HTMLAttributes<HTMLElement> {}
+interface HeroProps extends HTMLAttributes<HTMLElement> {
+    location: string;
+}
 
-export default function Hero({ ...props }: HeroProps) {
+export default function Hero({ location, ...props }: HeroProps) {
     return (
         <section
             id="hero"
@@ -41,12 +42,9 @@ export default function Hero({ ...props }: HeroProps) {
                     </CardHeader>
                     <CardContent className="space-y-8 p-0 md:p-6">
                         <p className="text-base">
-                            We&apos;re not just house cleaners, we&apos;re
-                            difference-makers. We transform cluttered spaces
-                            into sparkling havens, bringing order and calm to
-                            your busy life. Our professional and efficient
-                            service will leave your home sparkling clean, giving
-                            you more time to do the things you love.
+                            Delivering exceptional cleanliness to {location}
+                            homes and businesses with our highly sought-after
+                            professional cleaning services.
                         </p>
                         <div className="space-y-3 leading-tight font-medium">
                             <div className="flex items-center">
@@ -72,7 +70,8 @@ export default function Hero({ ...props }: HeroProps) {
                                     strokeWidth={3}
                                 />
                                 <p>
-                                    Trusted by 1000+ monthly movers in Brisbane
+                                    Trusted by 1000+ families monthly in{' '}
+                                    {location}
                                 </p>
                             </div>
                         </div>
@@ -94,7 +93,8 @@ export default function Hero({ ...props }: HeroProps) {
                                     'font-semibold'
                                 )}
                             >
-                                Get An Instant Quote
+                                <Icons.sparkles className="w-4 h-4 mr-1" /> Get
+                                An Instant Quote
                             </Link>
                             <div className="text-sm mt-2 itali px-4">
                                 It takes only 60 seconds
@@ -144,23 +144,6 @@ export default function Hero({ ...props }: HeroProps) {
                                             fill
                                             src={HeroTwoImage}
                                             alt="Moving Out Cleaner"
-                                            className="object-top object-cover bg-no-repeat"
-                                        />
-                                    </AspectRatio>
-                                </div>
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                            <div className="p-1">
-                                <div className="overflow-hidden rounded-xl">
-                                    <AspectRatio
-                                        ratio={16 / 9}
-                                        className="bg-secondary"
-                                    >
-                                        <Image
-                                            fill
-                                            src={HeroThreeImage}
-                                            alt="Vacate Cleaner"
                                             className="object-top object-cover bg-no-repeat"
                                         />
                                     </AspectRatio>

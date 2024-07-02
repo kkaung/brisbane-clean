@@ -13,10 +13,13 @@ import OfficeCleanImage from '/public/assets/images/office-cleaning.png';
 import BondCleanImage from '/public/assets/images/bond-cleaning.png';
 import WindowCleanImage from '/public/assets/images/window-cleaning.png';
 import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/button';
 
-interface ServicesProps extends HTMLAttributes<HTMLElement> {}
+interface ServicesProps extends HTMLAttributes<HTMLElement> {
+    location: string;
+}
 
-export default function Services({ ...props }: ServicesProps) {
+export default function Services({ location, ...props }: ServicesProps) {
     return (
         <section
             id="services"
@@ -24,17 +27,22 @@ export default function Services({ ...props }: ServicesProps) {
             className={cn(props.className)}
             {...props}
         >
-            <h2 className={headingVariants({})}>Cleaning Services</h2>
-            <ul className="mt-6 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <h3 className={headingVariants({})}>
+                Our Professional Cleaning Services
+            </h3>
+            <div className="mt-6 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {items.map(i => {
                     const ImageSrc = getImageSrc(i.image);
 
                     return (
-                        <li
+                        <div
                             key={i.title}
                             className="border rounded-xl overflow-hidden group cursor-pointer"
                         >
-                            <Link href={i.href} title={`${i.title} Gold Coast`}>
+                            <Link
+                                href={i.href}
+                                title={`${i.title} ${location}`}
+                            >
                                 <Image
                                     src={ImageSrc!}
                                     alt={`${i.title}`}
@@ -44,17 +52,23 @@ export default function Services({ ...props }: ServicesProps) {
                             <div className="p-4">
                                 <Link
                                     href={i.href}
-                                    title={`${i.title} Gold Coast`}
+                                    title={`${i.title} ${location}`}
+                                    className="font-semibold group-hover:underline"
                                 >
-                                    <h3 className="font-semibold group-hover:underline">
-                                        {i.title}
-                                    </h3>
+                                    {i.title}
                                 </Link>
                             </div>
-                        </li>
+                        </div>
                     );
                 })}
-            </ul>
+            </div>
+            <div className="flex items-center justify-center">
+                <div>
+                    <Link href="/services" className={cn(buttonVariants())}>
+                        View All Services
+                    </Link>
+                </div>
+            </div>
         </section>
     );
 }

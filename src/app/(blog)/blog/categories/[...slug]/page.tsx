@@ -1,8 +1,11 @@
-import { Shell } from 'lucide-react';
 import React from 'react';
 import { type Metadata } from 'next';
 import { Breadcrumbs } from '@/components/pagers/breadcrumbs';
-import { PageHeaderHeading } from '@/components/page-header';
+import {
+    PageHeader,
+    PageHeaderDescription,
+    PageHeaderHeading,
+} from '@/components/page-header';
 import { allPosts } from 'contentlayer/generated';
 import {
     PaginationPrevious,
@@ -13,42 +16,72 @@ import {
     PaginationEllipsis,
     PaginationNext,
 } from '@/components/ui/pagination';
+import { getPathname } from '@/lib/next';
+import { Shell } from '@/components/shell';
+import { allCategories } from '@/configs/category';
 
 import { BlogTabs } from '../../_components/blog-tabs';
 import PostCard from '../../_components/post-card';
 
 interface PageProps {
     params: {
-        slug: string;
+        slug: string[];
     };
 }
 
-export function generateMetadata(): Metadata {
+function getCategoryFromParam(params: any) {
+    const slug = params?.slug?.join('/');
+
+    const category = allCategories.find(cateogry => cateogry.slug === slug);
+
+    if (!category) return null;
+
+    return category;
+}
+
+export function generateMetadata({ params }: PageProps): Metadata {
+    const pathname = getPathname();
+
+    const slug = params?.slug?.join('/');
+
+    const category = allCategories.find(cateogry => cateogry.slug === slug)!;
+
     return {
-        // title: '',
-        // description: '',
+        title: `${category.title}`,
+        description: `${category.description}`,
+        alternates: {
+            canonical: pathname,
+        },
     };
 }
 
 export default function Page({ params }: PageProps) {
+    const category = getCategoryFromParam(params)!;
+
     return (
         <Shell>
-            {/* <Breadcrumbs
+            <Breadcrumbs
                 segments={[
                     { title: 'Home', href: '/' },
                     { title: 'Blog', href: '/blog' },
-                    { title: 'ss', href: '/blog/categories/' },
+                    {
+                        title: category.title,
+                        href: category.slug,
+                    },
                 ]}
                 dottable={false}
-            /> */}
-            <PageHeaderHeading>
-                <PageHeaderHeading>Heading...</PageHeaderHeading>
-            </PageHeaderHeading>
+            />
+            <PageHeader className="text-center space-y-4">
+                <PageHeaderHeading>{category.title}</PageHeaderHeading>
+                <PageHeaderDescription className="mx-auto">
+                    {category.description}
+                </PageHeaderDescription>
+            </PageHeader>
             <section className="mt-8 max-w-5xl w-full mx-auto">
                 <BlogTabs />
                 <div className="grid gap-6 grid-cols-1 mt-12 sm:grid-cols-2 md:grid-cols-3">
                     {allPosts.map((post, idx) => {
-                        return <PostCard post={post} key={idx} />;
+                        return <PostCard key={idx} post={post} />;
                     })}
                 </div>
                 <Pagination className="mt-8">

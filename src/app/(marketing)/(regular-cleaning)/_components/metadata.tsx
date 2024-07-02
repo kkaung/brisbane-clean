@@ -1,4 +1,3 @@
-import { siteConfig } from '@/configs/site';
 import { getPathname } from '@/lib/next';
 import { type Metadata } from 'next';
 
@@ -6,8 +5,8 @@ export const getMetadata = (location: string): Metadata => {
     const pathname = getPathname();
 
     return {
-        title: `#1 Regular Cleaning Service in ${location} - ${siteConfig.title}`,
-        description: `Enjoy a Sparkling Clean with Regular ${location} Cleaning Service. 200% Guranteed Cleaning Service. Book online in 60 seconds!`,
+        title: `${location}'s #1 Regular Cleaning Service 🥇`,
+        description: `Best Regular Cleaning Service in ${location} ✔️ 100% Guarantee ✔️ 5 Star-Rated Cleaning ✔️ Trusted & Vetted Cleaner ✔️ Instant Online Booking`,
         alternates: {
             canonical: pathname,
         },

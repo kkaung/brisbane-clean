@@ -5,10 +5,18 @@ export const getMetadata = (location: string): Metadata => {
     const pathname = getPathname();
 
     return {
-        title: `#1 Carpet Cleaning Service in ${location} - Carpet Cleaner ${location}`,
-        description: `${location}'s top carpet cleaner tackles even the toughest stains. Breathe life back into your carpets! Book online in 60 seconds.`,
+        title: `${location}'s #1 Carpet And Upholstery Cleaning Service 🥇`,
+        description: `Best Carpet And Upholstery Cleaning Service in ${location} ✔️ 100% Guarantee ✔️ 5 Star-Rated Cleaning ✔️ Trusted & Vetted Cleaners ✔️ Instant Online Booking`,
         alternates: {
             canonical: pathname,
         },
+        keywords: [
+            'carpet cleaning',
+            'carpet cleaner',
+            'carpet cleaning perth',
+            'carpet cleaner perth',
+            'upholstery cleaner',
+            'upholstery cleaner perth',
+        ],
     };
 };

@@ -24,9 +24,9 @@ var computedFields = {
     }
   }
 };
-var Author = defineDocumentType(() => ({
-  name: "Author",
-  filePathPattern: `authors/**/*.mdx`,
+var Product = defineDocumentType(() => ({
+  name: "Product",
+  filePathPattern: `products/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -34,13 +34,22 @@ var Author = defineDocumentType(() => ({
       required: true
     },
     description: {
-      type: "string"
-    },
-    avatar: {
       type: "string",
       required: true
     },
-    linkin: {
+    image: {
+      type: "string",
+      required: true
+    },
+    price: {
+      type: "number",
+      required: true
+    },
+    ratingCount: {
+      type: "number",
+      required: true
+    },
+    ratingValue: {
       type: "string",
       required: true
     }
@@ -88,7 +97,15 @@ var Post = defineDocumentType(() => ({
     },
     category: {
       type: "enum",
-      options: [""],
+      options: ["reviews", "guides"],
+      required: false
+    },
+    ratingValue: {
+      type: "string",
+      required: false
+    },
+    ratingCount: {
+      type: "number",
       required: false
     }
   },
@@ -97,7 +114,7 @@ var Post = defineDocumentType(() => ({
 var contentlayer_config_default = makeSource({
   contentDirPath: "./src/content",
   disableImportAliasWarning: true,
-  documentTypes: [Page, Post, Author],
+  documentTypes: [Page, Post],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
@@ -155,9 +172,9 @@ var contentlayer_config_default = makeSource({
   }
 });
 export {
-  Author,
   Page,
   Post,
+  Product,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-7LQPHSVS.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-WYUIQW7Y.mjs.map

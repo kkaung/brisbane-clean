@@ -5,8 +5,8 @@ export const getMetadata = (location: string): Metadata => {
     const pathname = getPathname();
 
     return {
-        title: `#1 Airbnb Cleaning Service in ${location} - Airbnb Cleaner ${location}`,
-        description: `Our professional cleaners ensure impeccable standards for every guest, boosting your 5-star reviews and bookings. Book online in 60 seconds!`,
+        title: `${location}'s #1 Airbnb Cleaning Service 🥇`,
+        description: `Best Airbnb Cleaning Service in ${location} ✔️ 100% Guarantee ✔️ 5 Star-Rated Cleaning ✔️ Trusted & Vetted Cleaners ✔️ Instant Online Booking`,
         alternates: {
             canonical: pathname,
         },

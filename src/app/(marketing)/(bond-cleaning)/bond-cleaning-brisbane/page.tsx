@@ -20,9 +20,10 @@ export default function Page() {
             city={city}
             segments={[
                 { title: 'Home', href: '/' },
+                { title: 'Services', href: '/services' },
                 {
                     title: 'Bond Cleaning',
-                    href: '/bond-cleaning-sydney',
+                    href: '/bond-cleaning-brisbane',
                 },
             ]}
         />

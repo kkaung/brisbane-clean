@@ -28,17 +28,15 @@ const SiteHeader = ({ ...props }: SiteHeaderProps) => {
                         mainNavItems={siteConfig.mainNav}
                         sidebarNavItems={siteConfig.mainNav}
                     />
-                    <div className="relative">
-                        <div className="font-extrabold text-lg text-primary text-nowrap">
-                            {siteConfig.logo}
-                        </div>
+                    <div className="relative flex items-center">
+                        <Icons.sparkles className="w-4 h-4 mr-1" />
                         <Link
                             aria-label="Home"
                             href="/"
-                            className="font-extrabold text-xl italic text-primary text-nowrap"
+                            className="font-extrabold text-lg text-primary text-nowrap"
                             title={`${siteConfig.title}`}
                         >
-                            <span className="sr-only">{siteConfig.title}</span>
+                            {siteConfig.title}
                         </Link>
                     </div>
                 </div>

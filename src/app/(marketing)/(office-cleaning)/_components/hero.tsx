@@ -17,7 +17,6 @@ import Balancer from 'react-wrap-balancer';
 import Image from 'next/image';
 import HeroOneImage from '/public/assets/images/hero-one.jpeg';
 import HeroTwoImage from '/public/assets/images/hero-two.jpeg';
-import HeroThreeImage from '/public/assets/images/hero-three.jpeg';
 import Autoplay from 'embla-carousel-autoplay';
 import { siteConfig } from '@/configs/site';
 
@@ -40,19 +39,15 @@ export default function Hero({ location, ...props }: HeroProps) {
                     <CardHeader className="py-6 pt-0 px-0 md:p-6 md:pb-0 md:pt-6">
                         <h1 className="font-extrabold text-4xl leading-none">
                             <Balancer>
-                                {location}&apos;s Most In Demand Office Claning
-                                Service
+                                The #1 Office Claning Service in {location}
                             </Balancer>
                         </h1>
                     </CardHeader>
                     <CardContent className="space-y-8 p-0 md:p-6">
                         <p className="text-base">
-                            Tired of cluttered desks and stale air hindering
-                            your office&apos;s potential? Let&apos;s face it, a
-                            clean workspace is a happy and productive workspace.
-                            That&apos;s where we come in, {location}&apos;s most
-                            trusted in-office cleaning service, dedicated to
-                            transforming your office environment.
+                            Boost productivity with our professional office
+                            cleaning, creating pristine workspaces across{' '}
+                            {location} businesses.
                         </p>
                         <div className="space-y-3 leading-tight">
                             <div className="flex items-center">
@@ -77,7 +72,10 @@ export default function Hero({ location, ...props }: HeroProps) {
                                     aria-hidden
                                     strokeWidth={3}
                                 />
-                                <p>Trusted by 1000+ monthly movers in {location}</p>
+                                <p>
+                                    Trusted by 1000+ monthly families in{' '}
+                                    {location}
+                                </p>
                             </div>
                         </div>
                         <div className="flex gap-1 items-center text-sm">
@@ -98,7 +96,8 @@ export default function Hero({ location, ...props }: HeroProps) {
                                     'font-semibold'
                                 )}
                             >
-                                Get An Instant Quote
+                                <Icons.sparkles className="w-4 h-4 mr-1" /> Get
+                                An Instant Quote
                             </Link>
                             <div className="text-sm mt-2 itali px-4">
                                 It takes only 60 seconds
@@ -130,7 +129,7 @@ export default function Hero({ location, ...props }: HeroProps) {
                                         <Image
                                             fill
                                             src={HeroOneImage}
-                                            alt="End Of Lease Cleaner"
+                                            alt="Office Cleaner"
                                             className="object-top object-cover bg-no-repeat"
                                         />
                                     </AspectRatio>
@@ -147,24 +146,7 @@ export default function Hero({ location, ...props }: HeroProps) {
                                         <Image
                                             fill
                                             src={HeroTwoImage}
-                                            alt="Moving Out Cleaner"
-                                            className="object-top object-cover bg-no-repeat"
-                                        />
-                                    </AspectRatio>
-                                </div>
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                            <div className="p-1">
-                                <div className="overflow-hidden rounded-xl">
-                                    <AspectRatio
-                                        ratio={16 / 9}
-                                        className="bg-secondary"
-                                    >
-                                        <Image
-                                            fill
-                                            src={HeroThreeImage}
-                                            alt="Vacate Cleaner"
+                                            alt="Office Cleaner"
                                             className="object-top object-cover bg-no-repeat"
                                         />
                                     </AspectRatio>

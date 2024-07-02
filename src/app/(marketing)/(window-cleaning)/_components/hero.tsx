@@ -17,7 +17,6 @@ import Balancer from 'react-wrap-balancer';
 import Image from 'next/image';
 import HeroOneImage from '/public/assets/images/hero-one.jpeg';
 import HeroTwoImage from '/public/assets/images/hero-two.jpeg';
-import HeroThreeImage from '/public/assets/images/hero-three.jpeg';
 import Autoplay from 'embla-carousel-autoplay';
 import { siteConfig } from '@/configs/site';
 
@@ -40,15 +39,16 @@ export default function Hero({ location, ...props }: HeroProps) {
                     <CardHeader className="py-6 pt-0 px-0 md:p-6 md:pb-0 md:pt-6">
                         <h1 className="font-extrabold text-4xl leading-none">
                             <Balancer>
-                                Residental Window Cleaning Service In {location}
+                                The #1 Residental Window Cleaning Service In{' '}
+                                {location}
                             </Balancer>
                         </h1>
                     </CardHeader>
                     <CardContent className="space-y-8 p-0 md:p-6">
                         <p className="text-base">
-                            Tired of peering through a hazy world of dirty
-                            windows? Let our expert {location} window cleaners
-                            be your heroes!
+                            Crystal-clear views guaranteed with our professional
+                            residential window cleaning for {location} homes and
+                            apartments.
                         </p>
                         <div className="space-y-3 leading-tight">
                             <div className="flex items-center">
@@ -74,7 +74,7 @@ export default function Hero({ location, ...props }: HeroProps) {
                                     strokeWidth={3}
                                 />
                                 <p>
-                                    Trusted by 1000+ monthly movers in{' '}
+                                    Trusted by 1000+ monthly families in{' '}
                                     {location}
                                 </p>
                             </div>
@@ -97,7 +97,8 @@ export default function Hero({ location, ...props }: HeroProps) {
                                     'font-semibold'
                                 )}
                             >
-                                Get An Instant Quote
+                                <Icons.sparkles className="w-4 h-4 mr-1" /> Get
+                                An Instant Quote
                             </Link>
                             <div className="text-sm mt-2 itali px-4">
                                 It takes only 60 seconds
@@ -147,23 +148,6 @@ export default function Hero({ location, ...props }: HeroProps) {
                                             fill
                                             src={HeroTwoImage}
                                             alt="Moving Out Cleaner"
-                                            className="object-top object-cover bg-no-repeat"
-                                        />
-                                    </AspectRatio>
-                                </div>
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                            <div className="p-1">
-                                <div className="overflow-hidden rounded-xl">
-                                    <AspectRatio
-                                        ratio={16 / 9}
-                                        className="bg-secondary"
-                                    >
-                                        <Image
-                                            fill
-                                            src={HeroThreeImage}
-                                            alt="Vacate Cleaner"
                                             className="object-top object-cover bg-no-repeat"
                                         />
                                     </AspectRatio>

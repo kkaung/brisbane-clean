@@ -5,8 +5,8 @@ export const getMetadata = (location: string): Metadata => {
     const pathname = getPathname();
 
     return {
-        title: `#1 After Builder Cleaning Service in ${location} - Post Construction Cleaner ${location}`,
-        description: `Top-rated after builders cleaning services in ${location}. Reliable, experienced & insured cleaners. Book online in 60 seconds!`,
+        title: `${location}'s #1 After Builder Cleaning Service 🥇`,
+        description: `Best After Builder Cleaning Services in ${location} ✔️ 100% Guarantee ✔️ 5 Star-Rated Cleaning ✔️ Trusted & Vetted Cleaners ✔️ Instant Online Booking`,
         alternates: {
             canonical: pathname,
         },

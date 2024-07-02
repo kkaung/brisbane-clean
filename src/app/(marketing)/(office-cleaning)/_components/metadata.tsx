@@ -5,8 +5,8 @@ export const getMetadata = (location: string): Metadata => {
     const pathname = getPathname();
 
     return {
-        title: `#1 Commercial Office Cleaning Service in ${location} - Office Cleaner ${location}`,
-        description: `Get a sparkling clean office with our professional office cleaners. ${location}'s trusted commercial office cleaning service. Book online in 60 seconds!`,
+        title: `${location}'s #1 Commercial Office Cleaning Service 🥇`,
+        description: `Best Commercial Office Cleaning Service in ${location} ✔️ 100% Guarantee ✔️ 5 Star-Rated Cleaning ✔️ Trusted & Vetted Cleaners ✔️ Instant Online Booking`,
         alternates: {
             canonical: pathname,
         },

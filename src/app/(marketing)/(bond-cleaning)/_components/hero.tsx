@@ -17,7 +17,6 @@ import Balancer from 'react-wrap-balancer';
 import Image from 'next/image';
 import HeroOneImage from '/public/assets/images/hero-one.jpeg';
 import HeroTwoImage from '/public/assets/images/hero-two.jpeg';
-import HeroThreeImage from '/public/assets/images/hero-three.jpeg';
 import Autoplay from 'embla-carousel-autoplay';
 import { siteConfig } from '@/configs/site';
 
@@ -40,7 +39,7 @@ export default function Hero({ location, ...props }: HeroProps) {
                     <CardHeader className="py-6 pt-0 px-0 md:p-6 md:pb-0 md:pt-6">
                         <h1 className="font-extrabold text-4xl leading-none">
                             <Balancer>
-                                End Of Lease Cleaning Service In {location}
+                              The #1 End Of Lease Cleaning Service In {location}
                             </Balancer>
                         </h1>
                     </CardHeader>
@@ -75,7 +74,7 @@ export default function Hero({ location, ...props }: HeroProps) {
                                     strokeWidth={3}
                                 />
                                 <p>
-                                    Trusted by 1000+ monthly movers in
+                                    Trusted by 1000+ monthly families in
                                     {location}
                                 </p>
                             </div>
@@ -148,23 +147,6 @@ export default function Hero({ location, ...props }: HeroProps) {
                                             fill
                                             src={HeroTwoImage}
                                             alt="Moving Out Cleaner"
-                                            className="object-top object-cover bg-no-repeat"
-                                        />
-                                    </AspectRatio>
-                                </div>
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                            <div className="p-1">
-                                <div className="overflow-hidden rounded-xl">
-                                    <AspectRatio
-                                        ratio={16 / 9}
-                                        className="bg-secondary"
-                                    >
-                                        <Image
-                                            fill
-                                            src={HeroThreeImage}
-                                            alt="Vacate Cleaner"
                                             className="object-top object-cover bg-no-repeat"
                                         />
                                     </AspectRatio>

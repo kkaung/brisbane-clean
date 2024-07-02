@@ -54,27 +54,27 @@ export default function Features({ ...props }: FeaturesProps) {
             className={cn(props.className, 'py-12 space-y-12')}
         >
             <div className="space-y-1">
-                <p className="text-pink-500 uppercase font-medium">
+                <div className="text-pink-500 uppercase font-medium">
                     Why {siteConfig.name}
-                </p>
-                <h2 className={headingVariants({})}>
+                </div>
+                <h3 className={headingVariants({})}>
                     More Than Just A Cleaning Service
-                </h2>
+                </h3>
             </div>
-            <ul className="grid grid-cols-1 gap-y-6 gap-x-12 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-y-6 gap-x-12 md:grid-cols-3">
                 {items.map((item, idx) => {
                     return (
-                        <li key={idx} className="space-y-3 py-6 border-b">
-                            <h3 className="font-semibold text-lg">
+                        <div key={idx} className="space-y-3 py-6 border-b">
+                            <h2 className="font-semibold text-lg">
                                 {item.title}
-                            </h3>
+                            </h2>
                             <p className="leading-tight text-muted-foreground">
                                 {item.content}
                             </p>
-                        </li>
+                        </div>
                     );
                 })}
-            </ul>
+            </div>
         </section>
     );
 }

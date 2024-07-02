@@ -18,6 +18,7 @@ export default function Page() {
             city={city}
             segments={[
                 { title: 'Home', href: '/' },
+                { title: 'Services', href: '/services' },
                 {
                     title: 'Oven Cleaning',
                     href: '/oven-cleaning-sydney',

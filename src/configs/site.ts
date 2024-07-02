@@ -8,19 +8,19 @@ const links = {
     instagram: 'https://www.instagram.com/mastermaidau',
     twitter: 'https://twitter.com/mastermaid_',
     pinterest: 'https://www.pinterest.com/mastermaid_',
-    linkin: 'https://www.linkedin.com/company/master-maid',
+    linkedin: 'https://www.linkedin.com/company/master-maid',
     youtube: 'https://www.youtube.com/channel/UC5sXd89738AKwrieLN00xbQ',
-    googlemap: '',
 
-    yelp: 'https://www.yelp.com/biz/',
+    googlemap: '',
 };
 
 export const siteConfig = {
-    logo: 'Master Maid Brisbane',
-    name: 'Master Maid Brisbane',
-    title: `Master Maid Brisbane`,
-    description: `Our top-rated cleaning services come with a 200% satisfaction guarantee. We deliver sparkling results you'll love with our professional cleaners. Book online in 60 seconds!`,
+    logo: 'Master Maid',
+    name: 'Master Maid',
+    title: `Master Maid`,
+    description: `Master Maid is a top-rated cleaning company in Brisbane, QLD. We offer tailored house cleaning and maid services for your homes, apartments and offices.`,
     url: 'https://mastermaid.com.au',
+    domain: 'mastermaid.com.au',
     ogImage: 'https://mastermaid.com.au/opengraph-image.png',
     mainNav: [
         {
@@ -121,6 +121,8 @@ export const siteConfig = {
             items: [
                 { title: 'Contact Us', href: '/contact' },
                 { title: 'Blog', href: '/blog' },
+                { title: 'Services', href: '/services' },
+                { title: 'Locations', href: '/locations' },
                 { title: 'Pricing', href: '/house-cleaning-pricing-brisbane' },
                 { title: 'Checklist', href: '/house-cleaning-checklist' },
                 { title: 'FAQs', href: '/frequently-asked-questions' },
@@ -130,7 +132,10 @@ export const siteConfig = {
         },
         {
             title: 'Company',
-            items: [{ title: 'About Us', href: '/about-us' }],
+            items: [
+                { title: 'About Us', href: '/about-us' },
+                { title: 'Careers', href: '/careers' },
+            ],
         },
     ] satisfies FooterItem[],
     business: {
@@ -138,10 +143,17 @@ export const siteConfig = {
         phone: '+61 414076980',
         address: 'Suite 101, 3/123 Albert St, Brisbane City QLD 4000',
         openingHour: 'Mon – Sun: 9:00 AM – 5:00 PM',
+        detailsAddress: {
+            streetAddress: 'Suite 101, 3/123 Albert St',
+            addressLocality: 'Brisbane City',
+            addressRegion: 'QLD',
+            postalCode: '4000',
+            addressCountry: 'Australia',
+        },
     },
     rating: {
         ratingValue: '4.9',
-        ratingCount: 727,
+        ratingCount: 1127,
     },
 };
 

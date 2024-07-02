@@ -5,8 +5,8 @@ export const getMetadata = (location: string): Metadata => {
     const pathname = getPathname();
 
     return {
-        title: `#1 Oven Cleaning Service in ${location} - Oven Cleaner ${location}`,
-        description: `We are top-rated oven cleaning company in ${location}. Book online in 60 seconds!`,
+        title: `${location}'s #1 Oven And BBQ Cleaning Service 🥇`,
+        description: `Best Oven Cleaning Service in ${location} ✔️ 100% Guarantee ✔️ 5 Star-Rated Cleaning ✔️ Trusted & Vetted Cleaner ✔️ Instant Online Booking`,
         alternates: {
             canonical: pathname,
         },

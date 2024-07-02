@@ -26,9 +26,9 @@ const computedFields = {
     },
 };
 
-export const Author = defineDocumentType(() => ({
-    name: 'Author',
-    filePathPattern: `authors/**/*.mdx`,
+export const Product = defineDocumentType(() => ({
+    name: 'Product',
+    filePathPattern: `products/**/*.mdx`,
     contentType: 'mdx',
     fields: {
         title: {
@@ -37,12 +37,21 @@ export const Author = defineDocumentType(() => ({
         },
         description: {
             type: 'string',
+            required: true,
         },
-        avatar: {
+        image: {
             type: 'string',
             required: true,
         },
-        linkin: {
+        price: {
+            type: 'number',
+            required: true,
+        },
+        ratingCount: {
+            type: 'number',
+            required: true,
+        },
+        ratingValue: {
             type: 'string',
             required: true,
         },
@@ -92,7 +101,15 @@ export const Post = defineDocumentType(() => ({
         },
         category: {
             type: 'enum',
-            options: [''],
+            options: ['reviews', 'guides'],
+            required: false,
+        },
+        ratingValue: {
+            type: 'string',
+            required: false,
+        },
+        ratingCount: {
+            type: 'number',
             required: false,
         },
     },
@@ -102,7 +119,7 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
     contentDirPath: './src/content',
     disableImportAliasWarning: true,
-    documentTypes: [Page, Post, Author],
+    documentTypes: [Page, Post],
     mdx: {
         remarkPlugins: [remarkGfm],
         rehypePlugins: [

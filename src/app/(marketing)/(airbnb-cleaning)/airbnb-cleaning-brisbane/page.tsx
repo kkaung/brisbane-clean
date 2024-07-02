@@ -21,6 +21,7 @@ export default function Page() {
             city={city}
             segments={[
                 { title: 'Home', href: '/' },
+                { title: 'Servces', href: '/services' },
                 {
                     title: 'Airbnb Cleaning',
                     href: '/airbnb-cleaning-brisbane',

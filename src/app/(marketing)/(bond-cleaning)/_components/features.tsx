@@ -17,7 +17,7 @@ const items = [
         content: `Bond cleans are booked online with one simple process, using your phone or computer.`,
     },
     {
-        title: 'Expert End Of Lease Cleaners',
+        title: 'Expert Bond Cleaners',
         content: `Our staff are professionally trained so you can trust our cleaning teams to do the best job possible so you can get your bond back.`,
     },
     {
@@ -26,7 +26,7 @@ const items = [
     },
     {
         title: 'Full Liability Insurance',
-        content: `Our end of lease cleaning service is covered by our $10 million public liability insurance.`,
+        content: `Our cleaning service is covered by our $10 million public liability insurance.`,
     },
     {
         title: 'Exceptional Customer Service',
@@ -34,7 +34,7 @@ const items = [
     },
     {
         title: 'Across Brisbane',
-        content: `We’ve got vetted end lease cleaners across Brisbane, ready to help get you on the move.`,
+        content: `We’ve got vetted bond cleaners across Brisbane, ready to help get you on the move.`,
     },
     {
         title: 'No Hidden Fees',

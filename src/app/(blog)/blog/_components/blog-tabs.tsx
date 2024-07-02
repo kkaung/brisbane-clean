@@ -22,6 +22,11 @@ export function BlogTabs({}: BlogTabsProps) {
             href: `/blog/categories/guides`,
             isActive: segment === 'guides',
         },
+        {
+            title: 'Reviews',
+            href: `/blog/categories/reviews`,
+            isActive: segment === 'reviews',
+        },
     ];
 
     return (

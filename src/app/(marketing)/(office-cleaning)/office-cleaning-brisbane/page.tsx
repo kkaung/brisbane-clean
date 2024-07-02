@@ -19,6 +19,7 @@ export default function Page() {
             city={city}
             segments={[
                 { title: 'Home', href: '/' },
+                { title: 'Services', href: '/services' },
                 {
                     title: 'Office Cleaning',
                     href: '/office-cleaning-sydney',
